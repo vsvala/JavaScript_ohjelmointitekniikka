@@ -1,1 +1,4 @@
 # JavaScript_ohjelmointitekniikka
+
+djhfvhoelkvnjeörGV
+clmdcölkwe,köäfvkwe
