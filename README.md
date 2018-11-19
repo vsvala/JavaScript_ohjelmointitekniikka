@@ -39,7 +39,44 @@ Normaalisti olemme tottuneet siihen että Paikallinen muuttuja ja sen arvo säil
 
 
 ## Oliot ja niiden käyttäytyminen: Olioiden käytön hyviä (ja jos mahdollista turvallisia) ohjelmointityylejä ja -malleja.
-Olion luominen
+
+### Olion luominen
+Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsitää myös avain- arvopareina, joita käytetään Hashmappien tavoin. 
+
+Yksinkertainen aaltosuluilla luotu olio:
+
+let noora = {nimi: "Noora", ika: 35};
+
+tai määritellään ominaisuudet jälkeenpäin:
+
+let virva = {};
+virva.nimi = "Virva";
+virva.ika = 18;
+
+Object Olion avulla:
+
+let noora = new Object();
+noora.nimi = "Noora";
+noora.ika = 35;
+
+Konstruktorifunction avulla :
+
+function Henkilo(nimi, ika) {
+  this.nimi = nimi;
+  this.ika = ika;
+}
+noora = new Henkilo("Noora", 35);
+
+tai vielä Object.create-funktion avulla:
+
+var Henkilo = {
+  nimi : "",
+  ika : "",
+  }
+  
+  var noora = Object.create(Henkilo);
+  noora.nimi = "Noora";
+  noora.ika = 35;
   
 Lähteet:  
   
