@@ -4,7 +4,7 @@
 
 ### näkyvyysalue
 
-Javascriptissä funktio muodostaa  oman näkyvyysalueensa(scope). Tällöin funktion muodolliset parametrit, paikalliset muuttujat ja paikalliset funktiot näkyvät ja ovat käytettävissä vain ko.funktion sisällä. Funktion  näkyvyyaluetta kutsutaan toisinaan myös viittausympäristöksi tai nimiavaruudeksi. Perusideana sisäkkäisillä näkyvyysalueilla on se, että "sisältä näkee ulos, mutta ulkoa ei näe sisään". Sulkeuma poikkeaa näkyvyysalueen normaalista määrittelystä, sillä siinä funktio suoritetaan oman näkvyysalueen sijasta sulkeuman määrittelyn funktion näkyvyysalueessa.
+Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikalliset(local) ja globaalit(global). Näkyvyysalue määrittelee, missä ja milloin muuttuja on olemasssa ja sen arvo on saatavilla. Totutusta Java kielen lohkoajattelusta  poiketen Javascript kielssä funktio muodostaa oman näkyvyysalueensa(scope). Tällöin funktion muodolliset parametrit, paikalliset muuttujat ja paikalliset funktiot näkyvät ja ovat käytettävissä vain ko.funktion sisällä. Funktion  näkyvyyaluetta kutsutaan toisinaan myös viittausympäristöksi tai nimiavaruudeksi. JavaScript kieli ei ole Javan tavoin "litteä", sillä funktiot voivat myös muodostaa useita sisäkkäisiä näkyyysalueita/miniavaruuksia. Perusideana JavaScriptin sisäkkäisillä näkyvyysalueilla on se, että "sisältä näkee ulos, mutta ulkoa ei näe sisään". Sulkeuma poikkeaa näkyvyysalueen normaalista määrittelystä, sillä siinä funktio suoritetaan oman näkvyysalueen sijasta sulkeuman määrittelyn funktion näkyvyysalueessa.
  
 ### sulkeuma
 
@@ -28,7 +28,11 @@ function sulkeumaEsimerkki() {
  
 Kyseinen funktio palauttaa toisen funktion, joka näkee ulomman funkpalauttaa arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin päättynyt.
 
-### kapselointi...sen turvallisuus?
+
+Normaalisti olemme tottuneet siihen että Paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. 
+
+### kapselointi...?
+
 "Edellä nähtiin, miten kutsuttu funktio voi sulkeuman vapaiden muuttujien avulla päästä muokkaamaan muuttujia, jotka eivät kuulu funktion omaan näkyvyysalueeseen. Noissa esimerkeissä nuo muuttujat ovat kuitenkin olleet olemassa – "kun funktio käynnistyy, sen paikalliset muuttujat syntyvät, kun funktion suoritus päättyy, sen paikalliset muuttujat häviävät" Tämä tekniikka osoittautuu aikanaan vahvaksi: sitä käyttäen voi toteuttaa mm. olioiden kenttien piilottamisen ja kätkettyjen kenttien "aksessorimetodit" Javan hengessä.(lainaus suoraan luentomatskusta... muokkaa)
 
 ### ehkä...?vielä esimerkki kapseloinista?...sen turvallisuus?
