@@ -45,8 +45,9 @@ Normaalisti olemme tottuneet siihen että Paikallinen muuttuja ja sen arvo säil
 Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Ominaisuuksia voidaan kutsua myös olioiden kentiksi. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsittää myös assosiaatiotaulukoksi joka sisältää avain- arvopareja, joita käytetään Hashmappien tavoin. 
 
 Yksinkertainen aaltosuluilla luotu olio:
+("This" viitteet tarvitaan, jotta tiedetään viitattavan juuri kyseisen olion kenttiin.)
 
-let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return his.yearnow-this.syntymavuosi}};
+let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return this.yearnow - this.syntymavuosi}};
 
 write(rnoora.ika()); //18
 
@@ -90,8 +91,7 @@ var Henkilo = {
   noora.ika = 35;
   
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä. Tämän piirteen kanssa tulee olla huolellinen, ettei tule vahingossa lisänneeksi ylimääräisiä kenttiä.  
-  
- -liittyykä perintä vain konstruktorilla luotuihin olioihin? 
+   
   
   
 Lähteet:  
