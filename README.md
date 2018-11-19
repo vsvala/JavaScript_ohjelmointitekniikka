@@ -41,6 +41,7 @@ Normaalisti olemme tottuneet siihen että Paikallinen muuttuja ja sen arvo säil
 ## Oliot ja niiden käyttäytyminen: Olioiden käytön hyviä (ja jos mahdollista turvallisia) ohjelmointityylejä ja -malleja.
 
 ### Olion luominen
+
 Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsitää myös avain- arvopareina, joita käytetään Hashmappien tavoin. 
 
 Yksinkertainen aaltosuluilla luotu olio:
@@ -59,13 +60,20 @@ let noora = new Object();
 noora.nimi = "Noora";
 noora.ika = 35;
 
-Konstruktorifunction avulla :
+Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä  ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia.
+Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla.
+
+
+Konstruktorifunction:
 
 function Henkilo(nimi, ika) {
   this.nimi = nimi;
   this.ika = ika;
 }
 noora = new Henkilo("Noora", 35);
+
+Object.create-funktio puolestaan taas vain luo instanssin parametrinä annetusta olioprototyypistä. Luotavaa oliota ei siis voida alustaa samalla tapaa monipuolisesti kuin konstruktorifunktion avulla. Tämän tavan etu on kuitenkin se, että Object.create-funktiolle annettava prototyyppi voidaan valita vapaasti, eli se mahdollistaa olioiden luomisen myös olioista, joille ei ole erikseen määritelty konstruktorifunktiota. Se myös mahdollistaa erityyppisten olioiden luomisen dynaamisesti samassa funktiossa, sillä parametrinä voi antaa minkä tahansa tyyppisen olion. (Tämä suora kopio, pitää muokata:)
+
 
 tai vielä Object.create-funktion avulla:
 
@@ -77,6 +85,11 @@ var Henkilo = {
   var noora = Object.create(Henkilo);
   noora.nimi = "Noora";
   noora.ika = 35;
+  
+Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä. Tämän piirteen kanssa tulee olla huolellinen, ettei tule vahingossa lisänneeksi ylimääräisiä kenttiä.  
+  
+  
+  
   
 Lähteet:  
   
