@@ -100,6 +100,9 @@ Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisät
   tähän esimerkki...kentän muutto
   poisto
   
+  
+Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.
+  
 Lähteet:  
   
 https://fi.wikipedia.org/wiki/Sulkeuma_(ohjelmointi)
