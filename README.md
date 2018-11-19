@@ -51,7 +51,7 @@ let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){r
 
 write(rnoora.ika()); //18
 
-tai määritellään ominaisuudet jälkeenpäin:
+tai määritellään ominaisuudet dynaamisesti jälkeenpäin:
 
 let virva = {};
 virva.nimi = "Virva";
@@ -63,6 +63,7 @@ Object Olion avulla:
 let noora = new Object();
 noora.nimi = "Noora";
 noora.ika = 35;
+
 
 Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä  ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia.
 Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla.
@@ -91,8 +92,13 @@ var Henkilo = {
   noora.ika = 35;
   
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä. Tämän piirteen kanssa tulee olla huolellinen, ettei tule vahingossa lisänneeksi ylimääräisiä kenttiä.  
-   
+ 
+ Dynaamisuus:
+ Olion knettiä voi lisätä ja poistaa sekä arvoja muuttaa dynaamisesti luonnin jälkeen.
   
+  Olion dynaamisen uusien arvojen sijoittelun kanssa kannattaa olla tarkkana sillä uusia arvoja sijoittaessa kirjoitusvirhe kentännimessä johtaa uuden kentän lisäämiseen olioon.
+  tähän esimerkki...kentän muutto
+  poisto
   
 Lähteet:  
   
