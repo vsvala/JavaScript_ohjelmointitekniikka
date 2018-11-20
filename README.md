@@ -44,7 +44,7 @@ Normaalisti olemme tottuneet siihen että Paikallinen muuttuja ja sen arvo säil
 
 Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Ominaisuuksia voidaan kutsua myös olioiden kentiksi. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsittää myös assosiaatiotaulukoksi joka sisältää avain- arvopareja, joita käytetään Hashmappien tavoin. 
 
-Yksinkertainen aaltosuluilla luotu olioliteraali:
+**Yksinkertainen aaltosuluilla luotu olioliteraali:**
 ("This" viitteet tarvitaan, jotta tiedetään viitattavan juuri kyseisen olion kenttiin.)
 
 let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return this.yearnow - this.syntymavuosi}};
@@ -58,7 +58,7 @@ virva.nimi = "Virva";
 virva.ika = 18;
 
 
-Object Olion avulla:
+**Object Olion avulla:**
 
 let noora = new Object();
 noora.nimi = "Noora";
@@ -69,7 +69,7 @@ Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksest
 Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla. Olioiden luontiin käytettävät funktiot kirjoitetaan hyvien ohjelmointitapojen tapojen mukaan isoilla kirjaimilla alkaviksi
 
 
-Konstruktorifunction:
+**Konstruktorifunktion:**
 
 function Henkilo(nimi, ika) {
   this.nimi = nimi;
@@ -83,7 +83,7 @@ Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka ka
 
 Object.create-funktio puolestaan taas vain luo instanssin parametrinä annetusta olioprototyypistä. Luotavaa oliota ei siis voida alustaa samalla tapaa monipuolisesti kuin konstruktorifunktion avulla. Tämän tavan etu on kuitenkin se, että Object.create-funktiolle annettava prototyyppi voidaan valita vapaasti, eli se mahdollistaa olioiden luomisen myös olioista, joille ei ole erikseen määritelty konstruktorifunktiota. Se myös mahdollistaa erityyppisten olioiden luomisen dynaamisesti samassa funktiossa, sillä parametrinä voi antaa minkä tahansa tyyppisen olion. (Tämä suora kopio, pitää muokata:)
 
-tai vielä Object.create-funktion avulla:
+**tai vielä Object.create-funktion avulla:**
 
 var Henkilo = {
   nimi : "",
@@ -94,7 +94,7 @@ var Henkilo = {
   noora.nimi = "Noora";
   noora.ika = 35;
  
-Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla...
+**Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla...**
  UUsin tapa... Class tästä esimerkki 
 ECMAScript 6 esitteli class-rakenteen, joka ns. syntaktista sokeria jo edellä opitulle konstruktorifunktiotekniikalle.
 
@@ -108,7 +108,7 @@ Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisät
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
-Olion kenttiin viittaamine ja läpikäynti
+**Olion kenttiin viittaamine ja läpikäynti**
 "Vain tunnuksen muotoisiin kenttiin voi viitata pisteilmauksella, kaikkiin muihin on viitattava hakasulkein!"
 olion kenttiin voidaan viitata joko pisteilmauksella tai taulukon ideksoinnin tapaan:
 write(noora.ika)
