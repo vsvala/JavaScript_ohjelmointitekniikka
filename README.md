@@ -10,9 +10,9 @@ Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikallise
 
 JavaScriptissä funktio voi saada parametrikseen toisen funktion. Tällöin sulkeumassa funktion parametrin mukana voidaan välittää myös sen muuttujia. Jos funktion sisällä luodaan sisempi funktio, sen näkyvyysalueeseen kuuluvat myös ulomman funktion muuttujat. Eli kun parametrin saanut funktio suorittaa parametrina saamansa funktion, suoritetaan se parametrina annetun funktion näkyvyysalueessa.
 
-### sidotut muuttujat
+**sidotut muuttujat**
 "Funktion sidotuiksi muuttujiksi kutsutaan funktion muodollisia parametreja sekä funktion sisällä määriteltyjä paikallisia muuttujia. Toisin sanoen muuttujia, joilla on merkitys vain funktion sisällä ja jotka suoritusaikana ovat olemassa vain funktion suorituksen ajan.(Tämä vielä suoraan lainausta luentomatskusta..muokkaa)
-### vapaat muuttujat
+**vapaat muuttujat**
 Funktion vapaiksi muuttujiksi kutsutaan sellaisia funktioon sisältymättömiä, mutta funktiossa viitattuja muuttujia, jotka funktiosta näkyvyyssääntöjen sallimana nähdään."(Tämä vielä suoraan lainausta luentomatskusta..mukkaa)
 
 Nimensä "sulkeuma" (closure) saa siitä, kun funktio välitetään parametrina sen käyttämät vapaat muuttujat "suljetaan" mukaan funktion suoritusta varten.
