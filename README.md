@@ -21,11 +21,13 @@ Nimensä "sulkeuma" (closure) saa siitä, kun funktio välitetään parametrina 
 esimerkki...
 
 ### 2. Sulkeumaan suljetuttujen vapaiden muuttujien määritellyt funktio päättyy, mutta sulkeuma säilyy
-
+```
 function sulkeumaEsimerkki() {
   var a = "sul", b = "keuma";
   return function() { return a + b };
 }
+```
+
  
 Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b  ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt. 
 
@@ -44,22 +46,25 @@ Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoe
 
 **Yksinkertainen aaltosuluilla luotu olioliteraali:**
 ("This" viitteet tarvitaan, jotta tiedetään viitattavan juuri kyseisen olion kenttiin.)
-
+```
 let noora = {nimi: "Noora", syntymavuosi: 2000, ika: 35};
 
+```
 
 tai määritellään ominaisuudet dynaamisesti jälkeenpäin:
-
+```
 let virva = {};
 virva.nimi = "Virva";
 virva.ika = 18;
 
+```
 
 **Object Olion avulla:**
-
+```
 let noora = new Object();
 noora.nimi = "Noora";
 noora.ika = 35;
+```
 
 
 Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä  ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia.
@@ -67,13 +72,14 @@ Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä 
 
 
 **Konstruktorifunktion:**
-
+```
 function Henkilo(nimi, ika) {
   this.nimi = nimi;
   this.ika = ika;
 }
 noora = new Henkilo("Noora", 35);
 var tokahenkilo = new Henkilo("Virva", 15);
+```
 
 Olion ilmentymät luodaan new-operaattorilla,ja jolloin sille viedään parametreina henkilön tiedot: etunimi ja ikä.
  
