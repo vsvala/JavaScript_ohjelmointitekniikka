@@ -120,7 +120,7 @@ kolmas:3
 };
 olio.eka=undefined;
 olio.toka=null;
-delete kolmas.3;
+delete olio.kolmas;
 
 or(var i in olio) {
     if (olio.hasOwnProperty(i)) {
