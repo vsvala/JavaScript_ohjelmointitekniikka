@@ -97,7 +97,18 @@ Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisät
   
   
 Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta... tähän esimerkki..
-  
+
+olion kentistä:
+"Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
+"Vain tunnuksen muotoisiin kenttiin voi viitata pisteilmauksella, kaikkiin muihin on viitattava hakasulkein!"
+olion kenttiin voidaan viitata joko pisteilmauksella tai taulukon ideksoinnin tapaan:
+write(noora.ika)
+nora["ika"]
+ 
+ Koska olioden kentät assosiaatiotauoita, Olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
+ tähän esimekki
+ 
+ 
 Lähteet:  
   
 https://fi.wikipedia.org/wiki/Sulkeuma_(ohjelmointi)
