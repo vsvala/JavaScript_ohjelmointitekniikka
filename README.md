@@ -76,7 +76,11 @@ function Henkilo(nimi, ika) {
   this.ika = ika;
 }
 noora = new Henkilo("Noora", 35);
-.
+
+  
+Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta... tähän esimerkki..
+
+
 Object.create-funktio puolestaan taas vain luo instanssin parametrinä annetusta olioprototyypistä. Luotavaa oliota ei siis voida alustaa samalla tapaa monipuolisesti kuin konstruktorifunktion avulla. Tämän tavan etu on kuitenkin se, että Object.create-funktiolle annettava prototyyppi voidaan valita vapaasti, eli se mahdollistaa olioiden luomisen myös olioista, joille ei ole erikseen määritelty konstruktorifunktiota. Se myös mahdollistaa erityyppisten olioiden luomisen dynaamisesti samassa funktiossa, sillä parametrinä voi antaa minkä tahansa tyyppisen olion. (Tämä suora kopio, pitää muokata:)
 
 tai vielä Object.create-funktion avulla:
@@ -89,15 +93,20 @@ var Henkilo = {
   var noora = Object.create(Henkilo);
   noora.nimi = "Noora";
   noora.ika = 35;
-  
+ 
+
+JavaScriptin "luokka" eli class-määrittely
+ UUsin tapa... Class tästä esimerkki 
+ECMAScript 6 esitteli class-rakenteen, joka ns. syntaktista sokeria jo edellä opitulle konstruktorifunktiotekniikalle.
+
+ 
+ Dynaamisuus:
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. 
  
   tähän esimerkki...kentän muutto?
  kuinka  poistetaan?
-  
-  
-Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta... tähän esimerkki..
-
+ 
+dynaamisuus:
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 "Vain tunnuksen muotoisiin kenttiin voi viitata pisteilmauksella, kaikkiin muihin on viitattava hakasulkein!"
