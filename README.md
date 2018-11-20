@@ -83,7 +83,7 @@ Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka ka
 Object.create-funktio puolestaan taas vain luo instanssin parametrinä annetusta olioprototyypistä. Luotavaa oliota ei siis voida alustaa samalla tapaa monipuolisesti kuin konstruktorifunktion avulla. Tämän tavan etu on kuitenkin se, että Object.create-funktiolle annettava prototyyppi voidaan valita vapaasti, eli se mahdollistaa olioiden luomisen myös olioista, joille ei ole erikseen määritelty konstruktorifunktiota. Se myös mahdollistaa erityyppisten olioiden luomisen dynaamisesti samassa funktiossa, sillä parametrinä voi antaa minkä tahansa tyyppisen olion. (Tämä suora kopio, pitää muokata:)
 
 **tai vielä Object.create-funktion avulla:**
-
+```
 var Henkilo = {
   nimi : "",
   ika : "",
@@ -92,7 +92,7 @@ var Henkilo = {
   var noora = Object.create(Henkilo);
   noora.nimi = "Noora";
   noora.ika = 35;
- 
+```
 **Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla.**
 
 ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia. Luokkiin ei myöskään voida (toistaiseksi?) ohjelmoida tietokenttiä.
@@ -113,11 +113,11 @@ this.yernow - this.syntymavuosi}
 
 ### Olion metodit
 Javasta  poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().
-
+```
 let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return this.yearnow - this.syntymavuosi}};
 
 write(noora.ika()); //18
-
+```
  
 ### Olioden dynaamisuudesta:
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. Huom. Oleellinen ero arvoa sijoittaessa ja haetaessa on siis se, sijoittaessa jos kenttää ei ole, se lisätään, huolimatta siitä löytyykö sitä "ylemmästä oliosta" kun taas  haettaessa kuljetaan prototyyppiketjuapitkin aina Objectolioon asti kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.
@@ -126,7 +126,7 @@ Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisät
 
 **poisto**
 Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.
-
+```
 var olio={
 eka:1,
 toka:2,
@@ -141,6 +141,7 @@ for(var i in olio) {
         console.log(i, '' + olio[i]);
     }
 }  
+```
 Ohjelma tulostaa  m1 undefined ja m2 null. vain m3 on poistettu
 Huomaa myös, että oliolion prototyyppiolion kentäntai metodin poisto poistaa kentäät kaikilta sen perineiltä olioilta.
  
@@ -149,16 +150,16 @@ olion kentistä:
 
 **Olion kenttiin viittaamine ja läpikäynti**
 olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
-	
+```	
  var elain = {nimi: 'Miuku'}
 	elain.nimi ; //Miuku
 	elain[‘nimi’]:  //Miuku
 
-
+```
  
  Koska olioden kentät assosiaatiotaulukoita, olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
 
- 
+``` 
 Object.prototype.lintu = "Peippo";
 var nisakas {kissa: "Miuku"};
 for(var i in elain) {
@@ -166,9 +167,9 @@ for(var i in elain) {
 }
 
  lisää kenttirn läpikäynti mahdollisuuksia...???
-
+ ```
 Jos halutaan selvittää pelkästään olion omat kentät voisi sen suorittaa Tämä on mahdollista käyttäen Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa
- 
+``` 
  Object.prototype.lintu = "Peippo";
 var nisakas {kissa: "Miuku"};
  for(var i in elain) {
@@ -176,7 +177,7 @@ var nisakas {kissa: "Miuku"};
         console.log(i);
     }
 }
- 
+  ```
 Lähteet:  
   
 https://fi.wikipedia.org/wiki/Sulkeuma_(ohjelmointi)
