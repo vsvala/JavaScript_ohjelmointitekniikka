@@ -97,19 +97,36 @@ var Henkilo = {
  UUsin tapa... Class tästä esimerkki 
 ECMAScript 6 esitteli class-rakenteen, joka ns. syntaktista sokeria jo edellä opitulle konstruktorifunktiotekniikalle.
 
-## Olion metodit
-Javasta  poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla var ika = this.ika;. Eli metodin etunimi-muuttujaan sijoitetaan arvo olion etunimi-muuttujasta.
-. Metodiin viitataan syntaksilla olio.metodi(),
+### Olion metodit
+Javasta  poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().
 
 let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return this.yearnow - this.syntymavuosi}};
 
-write(rnoora.ika()); //18
+write(noora.ika()); //18
+
  
 ### Olioden dynaamisuudesta:
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. 
  
   tähän esimerkki...kentän muutto?
- kuinka  poistetaan?
+Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.
+
+var olio={
+m1:1,
+m2:2,
+m3:3
+};
+olio.m1=undefined;
+olio.m2=null;
+delete m.3;
+
+or(var i in olio) {
+    if (olio.hasOwnProperty(i)) {
+        console.log(i, '' + olio[i]);
+    }
+}  
+Ohjelma tulostaa  m1 undefined ja m2 null. vain m3 on poistettu
+
  
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
