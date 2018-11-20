@@ -122,7 +122,7 @@ olio.eka=undefined;
 olio.toka=null;
 delete olio.kolmas;
 
-or(var i in olio) {
+for(var i in olio) {
     if (olio.hasOwnProperty(i)) {
         console.log(i, '' + olio[i]);
     }
@@ -134,24 +134,24 @@ olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
 **Olion kenttiin viittaamine ja läpikäynti**
-olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus . 
+olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
 	
  var elain = {nimi: 'Miuku'}
 	elain.nimi ; //Miuku
 	elain[‘nimi’]:  //Miuku
- 
-tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, 	jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
+
 
  
  Koska olioden kentät assosiaatiotaulukoita, olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
- tähän esimekki
- lisää kenttirn läpikäynti mahdollisuuksia...
+
  
 Object.prototype.lintu = "Peippo";
 var nisakas {kissa: "Miuku"};
 for(var i in elain) {
     console.log(i); // tulostaa sekä lintu että kissa
 }
+
+ lisää kenttirn läpikäynti mahdollisuuksia...???
 
 Jos halutaan selvittää pelkästään olion omat kentät voisi sen suorittaa Tämä on mahdollista käyttäen Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa
  
