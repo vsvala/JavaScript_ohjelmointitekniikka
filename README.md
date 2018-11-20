@@ -12,6 +12,7 @@ JavaScriptissä funktio voi saada parametrikseen toisen funktion. Tällöin sulk
 
 **sidotut muuttujat**
 "Funktion sidotuiksi muuttujiksi kutsutaan funktion muodollisia parametreja sekä funktion sisällä määriteltyjä paikallisia muuttujia. Toisin sanoen muuttujia, joilla on merkitys vain funktion sisällä ja jotka suoritusaikana ovat olemassa vain funktion suorituksen ajan.(Tämä vielä suoraan lainausta luentomatskusta..muokkaa)
+
 **vapaat muuttujat**
 Funktion vapaiksi muuttujiksi kutsutaan sellaisia funktioon sisältymättömiä, mutta funktiossa viitattuja muuttujia, jotka funktiosta näkyvyyssääntöjen sallimana nähdään."(Tämä vielä suoraan lainausta luentomatskusta..mukkaa)
 
