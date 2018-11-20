@@ -114,13 +114,13 @@ Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisät
 Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.
 
 var olio={
-m1:1,
-m2:2,
-m3:3
+eka:1,
+toka:2,
+kolmas:3
 };
-olio.m1=undefined;
-olio.m2=null;
-delete m.3;
+olio.eka=undefined;
+olio.toka=null;
+delete kolmas.3;
 
 or(var i in olio) {
     if (olio.hasOwnProperty(i)) {
