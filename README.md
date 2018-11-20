@@ -94,21 +94,21 @@ var Henkilo = {
   noora.nimi = "Noora";
   noora.ika = 35;
  
-
-JavaScriptin "luokka" eli class-määrittely
+Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla...
  UUsin tapa... Class tästä esimerkki 
 ECMAScript 6 esitteli class-rakenteen, joka ns. syntaktista sokeria jo edellä opitulle konstruktorifunktiotekniikalle.
 
  
- Dynaamisuus:
+### Olioden dynaamisuudesta:
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. 
  
   tähän esimerkki...kentän muutto?
  kuinka  poistetaan?
  
-dynaamisuus:
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
+
+Olion kenttiin viittaamine ja läpikäynti
 "Vain tunnuksen muotoisiin kenttiin voi viitata pisteilmauksella, kaikkiin muihin on viitattava hakasulkein!"
 olion kenttiin voidaan viitata joko pisteilmauksella tai taulukon ideksoinnin tapaan:
 write(noora.ika)
@@ -116,6 +116,7 @@ nora["ika"]
  
  Koska olioden kentät assosiaatiotauoita, Olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
  tähän esimekki
+ lisää kenttirn läpikäynti mahdollisuuksia...
  
  
 Lähteet:  
