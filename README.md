@@ -95,7 +95,7 @@ var Henkilo = {
  
 **Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla.**
 
-ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia
+ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia. Luokkiin ei myöskään voida (toistaiseksi?) ohjelmoida tietokenttiä.
 ```
  class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
