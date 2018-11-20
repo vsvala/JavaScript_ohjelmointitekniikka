@@ -10,16 +10,16 @@ Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikallise
 
 JavaScriptissä funktio voi saada parametrikseen toisen funktion. Tällöin sulkeumassa funktion parametrin mukana voidaan välittää myös sen muuttujia. Jos funktion sisällä luodaan sisempi funktio, sen näkyvyysalueeseen kuuluvat myös ulomman funktion muuttujat. Eli kun parametrin saanut funktio suorittaa parametrina saamansa funktion, suoritetaan se parametrina annetun funktion näkyvyysalueessa.
 
-**sidotut muuttujat**
-"Funktion sidotuiksi muuttujiksi kutsutaan funktion muodollisia parametreja sekä funktion sisällä määriteltyjä paikallisia muuttujia. Toisin sanoen muuttujia, joilla on merkitys vain funktion sisällä ja jotka suoritusaikana ovat olemassa vain funktion suorituksen ajan.(Tämä vielä suoraan lainausta luentomatskusta..muokkaa)
+**Sidotut muuttujat** muuttujat ovat funktion muodollisia parametreja sekä funktion sisällä määriteltyjä paikallisia muuttujia. Näillä funktioilla on merkitys vain funktion sisällä ne ovat olemassa vain funktion suorituksen ajan.
 
-**vapaat muuttujat**
-Funktion vapaiksi muuttujiksi kutsutaan sellaisia funktioon sisältymättömiä, mutta funktiossa viitattuja muuttujia, jotka funktiosta näkyvyyssääntöjen sallimana nähdään."(Tämä vielä suoraan lainausta luentomatskusta..mukkaa)
+**Vapaat muuttujat** ovat funktion ulkopuolella olevia, mutta funktiossa viitattuja muuttujia, jotka funktiosta näkyvyyssääntöjen:"sisältä näkee ulos", sallimana nähdään.
 
 Nimensä "sulkeuma" (closure) saa siitä, kun funktio välitetään parametrina sen käyttämät vapaat muuttujat "suljetaan" mukaan funktion suoritusta varten.
 
-
 ### 1. Sulkeumaan suljetut vapaat muuttujat säilyvät sulkeuman suorituksen jälkeiseen aikaan.
+
+esimerkki...
+
 ### 2. Sulkeumaan suljetuttujen vapaiden muuttujien määritellyt funktio päättyy, mutta sulkeuma säilyy
 
 function sulkeumaEsimerkki() {
@@ -27,10 +27,7 @@ function sulkeumaEsimerkki() {
   return function() { return a + b };
 }
  
-Kyseinen funktio palauttaa toisen funktion, joka näkee ulomman funkpalauttaa arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin päättynyt.
-
-
-Normaalisti olemme tottuneet siihen että Paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. 
+Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b  ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt. 
 
 ### kapselointi...?
 
