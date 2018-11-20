@@ -179,7 +179,7 @@ Jos halutaan selvittää pelkästään olion omat kentät voisi sen suorittaa T�
  Object.prototype.lintu = "Peippo";
 var nisakas {kissa: "Miuku"};
  for(var i in elain) {
-    if (foo.hasOwnProperty(i)) {
+    if (nisakas.hasOwnProperty(i)) {
         console.log(i);
     }
 }
