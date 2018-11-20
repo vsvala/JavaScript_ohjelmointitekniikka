@@ -93,9 +93,19 @@ var Henkilo = {
   noora.nimi = "Noora";
   noora.ika = 35;
  
-**Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla...**
- UUsin tapa... Class tästä esimerkki 
-ECMAScript 6 esitteli class-rakenteen, joka ns. syntaktista sokeria jo edellä opitulle konstruktorifunktiotekniikalle.
+**Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla.**
+ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.
+ Class Henkilo{
+ constructor(nimi, yearnow, syntymavuosi);{
+ this.nimi=Tytti;
+ this.yearnow=2018;
+ this.syntymavuosi=200;
+}
+ika(){
+this.yernow - this.syntymavuosi}
+} 
+} //18
+
 
 ### Olion metodit
 Javasta  poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().
