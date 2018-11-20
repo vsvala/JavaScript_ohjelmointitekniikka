@@ -106,9 +106,11 @@ write(noora.ika()); //18
 
  
 ### Olioden dynaamisuudesta:
-Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. Huom. Oleellinen ero arvoa sijoittaessa ja haetaessa on siis se, sijoittaessa jos kenttää ei ole, se lisätään, huolimatta siitä löytyykö sitä "ylemmästä oliosta" kun taas  haettaessa kuljetaan prototyyppiketjuapitkin aina kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.
+Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. Huom. Oleellinen ero arvoa sijoittaessa ja haetaessa on siis se, sijoittaessa jos kenttää ei ole, se lisätään, huolimatta siitä löytyykö sitä "ylemmästä oliosta" kun taas  haettaessa kuljetaan prototyyppiketjuapitkin aina Objectolioon asti kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.
  
   tähän esimerkki...kentän muutto?
+
+**poisto**
 Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.
 
 var olio={
@@ -126,7 +128,7 @@ or(var i in olio) {
     }
 }  
 Ohjelma tulostaa  m1 undefined ja m2 null. vain m3 on poistettu
-
+Huomaa myös, että oliolion prototyyppiolion kentäntai metodin poisto poistaa kentäät kaikilta sen perineiltä olioilta.
  
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
