@@ -138,14 +138,28 @@ olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus
 	elain.nimi ; //Miuku
 	elain[‘nimi’]:  //Miuku
  
-	tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, 	jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
-
+tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, 	jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
 
  
- Koska olioden kentät assosiaatiotauoita, Olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
+ Koska olioden kentät assosiaatiotaulukoita, olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
  tähän esimekki
  lisää kenttirn läpikäynti mahdollisuuksia...
  
+Object.prototype.lintu = "Peippo";
+var nisakas {kissa: "Miuku"};
+for(var i in elain) {
+    console.log(i); // tulostaa sekä lintu että kissa
+}
+
+Jos halutaan selvittää pelkästään olion omat kentät voisi sen suorittaa Tämä on mahdollista käyttäen Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa
+ 
+ Object.prototype.lintu = "Peippo";
+var nisakas {kissa: "Miuku"};
+ for(var i in elain) {
+    if (foo.hasOwnProperty(i)) {
+        console.log(i);
+    }
+}
  
 Lähteet:  
   
