@@ -45,9 +45,8 @@ Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoe
 **Yksinkertainen aaltosuluilla luotu olioliteraali:**
 ("This" viitteet tarvitaan, jotta tiedetään viitattavan juuri kyseisen olion kenttiin.)
 
-let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return this.yearnow - this.syntymavuosi}};
+let noora = {nimi: "Noora", syntymavuosi: 2000, ika: 35};
 
-write(rnoora.ika()); //18
 
 tai määritellään ominaisuudet dynaamisesti jälkeenpäin:
 
@@ -74,8 +73,10 @@ function Henkilo(nimi, ika) {
   this.ika = ika;
 }
 noora = new Henkilo("Noora", 35);
+var tokahenkilo = new Henkilo("Virva", 15);
 
-  
+Olion ilmentymät luodaan new-operaattorilla,ja jolloin sille viedään parametreina henkilön tiedot: etunimi ja ikä.
+ 
 Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta... tähän esimerkki..
 
 
@@ -96,6 +97,13 @@ var Henkilo = {
  UUsin tapa... Class tästä esimerkki 
 ECMAScript 6 esitteli class-rakenteen, joka ns. syntaktista sokeria jo edellä opitulle konstruktorifunktiotekniikalle.
 
+## Olion metodit
+Javasta  poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla var ika = this.ika;. Eli metodin etunimi-muuttujaan sijoitetaan arvo olion etunimi-muuttujasta.
+. Metodiin viitataan syntaksilla olio.metodi(),
+
+let noora = {nimi: "Noora", syntymavuosi: 2000, yearnow: 2018, ika: function(){return this.yearnow - this.syntymavuosi}};
+
+write(rnoora.ika()); //18
  
 ### Olioden dynaamisuudesta:
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. 
@@ -107,10 +115,15 @@ olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
 **Olion kenttiin viittaamine ja läpikäynti**
-"Vain tunnuksen muotoisiin kenttiin voi viitata pisteilmauksella, kaikkiin muihin on viitattava hakasulkein!"
-olion kenttiin voidaan viitata joko pisteilmauksella tai taulukon ideksoinnin tapaan:
-write(noora.ika)
-nora["ika"]
+olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus . 
+	
+ var elain = {nimi: 'Miuku'}
+	elain.nimi ; //Miuku
+	elain[‘nimi’]:  //Miuku
+ 
+	tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, 	jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
+
+
  
  Koska olioden kentät assosiaatiotauoita, Olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
  tähän esimekki
