@@ -67,11 +67,11 @@ noora.ika = 35;
 ```
 
 
-Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä  ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia.
-Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla. Olioiden luontiin käytettävät funktiot kirjoitetaan hyvien ohjelmointitapojen tapojen mukaan isoilla kirjaimilla alkaviksi
+Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja niiden avulla voi luoda yksittäisiä  ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia.
+Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla. Olioiden luontiin käytettävät funktiot kirjoitetaan hyvien ohjelmointitapojen tapojen mukaan isoilla kirjaimilla alkaviksi. Olion ilmentymät luodaan new-operaattorilla,ja jolloin sille viedään parametreina henkilön tiedot: etunimi ja ikä.
 
 
-**Konstruktorifunktion:**
+**Konstruktorifunktion avulla:**
 ```
 function Henkilo(nimi, ika) {
   this.nimi = nimi;
@@ -81,9 +81,7 @@ noora = new Henkilo("Noora", 35);
 var tokahenkilo = new Henkilo("Virva", 15);
 ```
 
-Olion ilmentymät luodaan new-operaattorilla,ja jolloin sille viedään parametreina henkilön tiedot: etunimi ja ikä.
- 
-Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta... tähän esimerkki..
+Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta.
 
 
 Object.create-funktio puolestaan taas vain luo instanssin parametrinä annetusta olioprototyypistä. Luotavaa oliota ei siis voida alustaa samalla tapaa monipuolisesti kuin konstruktorifunktion avulla. Tämän tavan etu on kuitenkin se, että Object.create-funktiolle annettava prototyyppi voidaan valita vapaasti, eli se mahdollistaa olioiden luomisen myös olioista, joille ei ole erikseen määritelty konstruktorifunktiota. Se myös mahdollistaa erityyppisten olioiden luomisen dynaamisesti samassa funktiossa, sillä parametrinä voi antaa minkä tahansa tyyppisen olion. (Tämä suora kopio, pitää muokata:)
@@ -149,12 +147,12 @@ for(var i in olio) {
 }  
 ```
 Ohjelma tulostaa  m1 undefined ja m2 null. vain m3 on poistettu
-Huomaa myös, että oliolion prototyyppiolion kentäntai metodin poisto poistaa kentäät kaikilta sen perineiltä olioilta.
+Huomaa myös, että oliolion prototyyppiolion kentän tai metodin poisto poistaa kentät kaikilta sen perineiltä olioilta.
  
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
-**Olion kenttiin viittaamine ja läpikäynti**
+**Olion kenttiin viittaaminen ja läpikäynti**
 olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
 ```	
  var elain = {nimi: 'Miuku'}
