@@ -1,5 +1,8 @@
 # JavaScript_ohjelmointitekniikka
 
+Kurssin harjoitusten työstöversio.
+[Oikea versio osoitteessa:](https://www.cs.helsinki.fi/u/svsv/js.html)
+
 ## Sulkeuma ja sen käyttötavat
 
 ### näkyvyysalue
