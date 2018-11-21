@@ -38,11 +38,13 @@ Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säil
 ### ehkä...?vielä esimerkki kapseloinista?...sen turvallisuus?
 
 
-## Oliot ja niiden käyttäytyminen: Olioiden käytön hyviä (ja jos mahdollista turvallisia) ohjelmointityylejä ja -malleja.
+## Oliot ja niiden käyttäytyminen 
 
 ### Olion luominen
 
 Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Ominaisuuksia voidaan kutsua myös olioiden kentiksi. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsittää myös assosiaatiotaulukoksi joka sisältää avain- arvopareja, joita käytetään Hashmappien tavoin. 
+
+Alla esitellään neljä eri tapaa luoda olio Javascriptissa:
 
 **Yksinkertainen aaltosuluilla luotu olioliteraali:**
 ("This" viitteet tarvitaan, jotta tiedetään viitattavan juuri kyseisen olion kenttiin.)
@@ -79,15 +81,19 @@ function Henkilo(nimi, ika) {
 }
 noora = new Henkilo("Noora", 35);
 var tokahenkilo = new Henkilo("Virva", 15);
+
+console.log(noora.ika) //35
+console.log(tokahenkilo.nimi) //Virva
 ```
 
+Tämä teksti pitää vielä muokata:
 Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään....Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta.
 
-TÄHÄN ESIMERKKI jossa prototyyppioliolle on lisätty metodi perittäväksi
+Henkilo.prototype.tuplaaIka = function() {return this.ika * 2}
+console.log(noora.tuplaaIka()); //70
 
-Object.create-funktio puolestaan taas vain luo instanssin parametrinä annetusta olioprototyypistä. Luotavaa oliota ei siis voida alustaa samalla tapaa monipuolisesti kuin konstruktorifunktion avulla. Tämän tavan etu on kuitenkin se, että Object.create-funktiolle annettava prototyyppi voidaan valita vapaasti, eli se mahdollistaa olioiden luomisen myös olioista, joille ei ole erikseen määritelty konstruktorifunktiota. Se myös mahdollistaa erityyppisten olioiden luomisen dynaamisesti samassa funktiossa, sillä parametrinä voi antaa minkä tahansa tyyppisen olion. (Tämä suora kopio, pitää muokata:)
 
-**tai vielä Object.create-funktion avulla:**
+**Olion luonti Object.create-funktion avulla:**
 ```
 var Henkilo = {
   nimi : "",
@@ -98,9 +104,11 @@ var Henkilo = {
   noora.nimi = "Noora";
   noora.ika = 35;
 ```
+Object.create tavan etuna on, että functiolle annettava prototyyppi voidaan valita vapaasti. Eri tyyppisiä olioita voidaan luoda dynaamisesti samassa functiossa sillä parametrina voi antaa minkä tahansa tyyppisen olion.
+
 **Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla.**
 
-ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia. Luokkiin ei myöskään voida (toistaiseksi?) ohjelmoida tietokenttiä.
+Rakenne on pohjimmiltaan sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia. 
 ```
  class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
