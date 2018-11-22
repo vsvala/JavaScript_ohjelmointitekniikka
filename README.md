@@ -472,54 +472,6 @@ Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä 
 
 
 
-
-<p><b>Object Olion avulla:</b></p>
-<div class ="highlight">
-<p>let noora = new Object(); noora.nimi = "Noora"; noora.ika = 35;</p></div>
-<p>Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja 
-	nidien avulla voi luoda yksittäisiä ns kertakäyttöoliota joilla ei ole yhtei$
-<div>
-
-<p><b>Konstruktorifunktio</b><p/>
-
-<div class="highlight">
-<p>function Henkilo(nimi, ika) { this.nimi = nimi; this.ika = ika; }</p><p> noora = new Henkilo("Noora", 35);</p><p>virva = new Henkilo("Virva", 5);</p>
-</div>
-
-
-<p>Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa o$
-<div class = "highlight">
-<p>Henkilo.prototype.tuplaaIka = function() {return this.ika * 2} console.log(noora.tuplaaIka()); //70</p>
-</div>
-
-<p><b>tai vielä Object.create-funktion avulla:</b></p>
-
-<div class = "highlight">
-
-<p>var Henkilo = {
-  nimi : "",
-  ika : "",
-  }
-
-
-  }
-
-  var noora = Object.create(Henkilo);
-  noora.nimi = "Noora";
-  noora.ika = 35;</p>
-</div>
-
-<p>Object.create tavan etuna on, että functiolle annettava prototyyppi voidaan valita vapaasti. Eri tyyppisiä olioita voidaan luoda dynaamisesti samassa functiossa sillä parametrina voi antaa $
-
-
-
-
-
-<p><b>Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla.</b></p>
-<p>ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konst$
-
-<div class = "highlight">
-
 <p>var Henkilo = {
    class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
@@ -583,33 +535,6 @@ this.yernow - this.syntymavuosi}
 
 ´´´
 ```
-_____________________________________________________________________________________________________________________________
-<h3>Olion metodit</h3>
-
-<p>Javasta poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.$
-
-<div class = "highlight">
-<p>var Henkilo = {
-   class Henkilo{
- constructor(nimi, yearnow, syntymavuosi);{
- this.nimi=Tytti;
- this.yearnow=2018;
- this.syntymavuosi=200;
-}
-ika(){
-this.yernow - this.syntymavuosi}
-}
-} //18
-</p>
-</div>
-
-<h3>Olioden dynaamisuudesta:</h3>
-<p>
-Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen.
-Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää(jos esim. vahingossa kirjoittaa kentän nimen väärin). Huom! Oleell$
-pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.</p>
-
-<p><b>Olion kenttiin viittaaminen ja läpikäynti</b></p>
 
 ### Olion metodit
 Javasta  poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().
@@ -645,62 +570,6 @@ for(var i in olio) {
 Ohjelma tulostaa  m1 undefined ja m2 null. vain m3 on poistettu
 Huomaa myös, että oliolion prototyyppiolion kentän tai metodin poisto poistaa kentät kaikilta sen perineiltä olioilta.
  
- 
-___________________________________________________________________________________________________________________________ 
- 
- <p>Olion kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku eli  kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi. Olion kentän tietoihin tietoi$
-<div class = "highlight">
-<p> var elain = {nimi: 'Miuku'}
-        elain.nimi ; //Miuku
-        elain[‘nimi’]:  //Miuku</p>
-</div>
-
-<p>Koska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.<$
-<div class = "highlight">
-<p>Object.prototype.lintu = "Peippo";</p>
-<p>var elain = {kissa: "Miuku"};</p>
-<p>for(var i in elain) {</p>
-<p>console.log(i); // tulostaa sekä lintu että kissa }</p>
-</div>
-<p>Jos halutaan selvittää pelkästään olion omat kentät yksi tapa on käyttää  Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa</p>
-
-<div class = "highlight">
-<p>Object.prototype.lintu = "Peippo";</p>
-<p>var elain = {kissa: "Miuku"};</p>
-<p>for(var i in elain) {</p>
-<p> if (elain.hasOwnProperty(i)) {</p>
-<p>console.log(i); // tulostaa vain kissa }</p>
-</div>
-<p>Samaan tyyliin saataisiin seuraavilla selville olion numeroimattomien kenttien kentttämimet käyttämällä funktiota: Object.getOwnPropertyNames(o) </p>
-<div class = "highlight">
-<p>var sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};</p>
-<p>write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku</p>
-</div>
-
-
-<p><b>Olion poisto</b></p>
-<p>Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta,$
-<div class = "highlight">
-
-<p>var olio={</p>
-<p>eka:1,</p>
-<p>toka:2,</p>
-<p>kolmas:3;</p>
-<p>}</p>
-<p>olio.eka=undefined;</p>
-<p>olio.toka=null;</p>
-<p>delete olio.kolmas;</p>
-<p> </p>
-<p>for(var i in olio) {</p>
-<p>if (olio.hasOwnProperty(i)) {</p>
-<p> console.log(i, '' + olio[i]);</p>
-</div>
-<p>Ohjelma tulostaa m1 undefined ja m2 null. vain m3 on poistettu Huomaa myös, että oliolion prototyyppiolion kentän tai metodin poisto poistaa kentät kaikilta sen perineiltä olioilta.</p>
-
-<p><b>olion getterit ja setterit</p></b>
-
-<p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
-
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
@@ -734,34 +603,5 @@ var nisakas {kissa: "Miuku"};
     }
 }
   ```
-
-<p>Lähteet(tehtävät1):</p>
-
-<ul>
-  <li>https://github.com/zHarrowed/Javascript-ohjelmointitekniikka/wiki/Viikko-2</li>
-  <li>https://fi.wikipedia.org/wiki/Tyyppijärjestelmä</li>
-  <li>https://fi.wikipedia.org/wiki/JavaScript</li>
-  <li>http://www.mit.jyu.fi/opiskelu/seminaarit/ohjelmistotekniikka/funktion/  </li>
- <li> https://fi.wikipedia.org/wiki/Funktionaalinen_ohjelmointi</li>
- <li>https://fi.wikipedia.org/wiki/Imperatiivinen_ohjelmointi</li>
- <li>https://plus.cs.hut.fi/o1/2017/k07/osa05/  </li>
- <li>https://fullstackopen.github.io/osa1/  </li>
- <li>Map -part 2 of Functional Programming in JAvaScript
-https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84&index=2  </li>
-
-
-</ul>
-   </section>
-
-<p>Lähteet(tehtävät2):</p>
-
-<ul>
-  <li>https://www.cs.helsinki.fi/u/wikla/OTjs/materiaalia/funktiot/</li>
-  <li>https://www.cs.helsinki.fi/u/wikla/OTjs/materiaalia/oliot/</li>
-  <li>https://fi.wikipedia.org/wiki/Sulkeuma_(ohjelmointi)</li>
-  <li>https://bonsaiden.github.io/JavaScript-Garden/fi/#function.closures</li>
-  <li>http://www.mit.jyu.fi/opiskelu/seminaarit/ohjelmistotekniikka/funktion/  </li>
- <li> https://books.google.fi/books?id=DWs-DwAAQBAJ&pg=PA73&lpg=PA73&dq=JavaScript+sulkeuma&source=bl&ots=C5OQuDEQxF&sig=_aMEunKdE_Vhvc8forJOkYlDFWc&hl=fi&sa=X&ved=2ahUKEwi33bzI_t7eAhULiCwKHQl$
- <li>  </li>
 
 
