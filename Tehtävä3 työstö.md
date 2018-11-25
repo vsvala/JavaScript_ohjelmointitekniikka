@@ -1,9 +1,20 @@
 
 # 3. oliot, protoryypit ja periytyminen
 
-## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
+Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion prototyyppi ja prototyyppiolio olio ovat sama asia.
+
+Prototyyppiperiytyminen perustuu Object ja Function olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioita joiden avulla luodaan uusia olioita ja funktioita.
+
+Kuten alla oleva kuva havainnollistaa
+"Kaikki oliot perivät Object-funktion prototyyppiolion kentät, funktioarvoiset ja muut, ellei perintää ole itse katkaistu."(suora lainaus luennoista muokkaa)
+
+"Kaikki funktiot perivät...
+
+
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.png" >
 
+
+## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
 
 ##  b) koodin turhan kopioimisen välttäminen, koodin uudelleenkäyttö.
 
