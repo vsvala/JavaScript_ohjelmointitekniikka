@@ -8,7 +8,7 @@ Prototyyppiperiytyminen perustuu Object ja Function olioihin(funktioihin), jo
 Kuten alla oleva kuva havainnollistaa
 "Kaikki oliot perivät Object-funktion prototyyppiolion kentät, funktioarvoiset ja muut, ellei perintää ole itse katkaistu."(suora lainaus luennoista muokkaa)
 
-"Kaikki funktiot perivät...
+"Kaikki funktiot puolestaan perivät Function-funktion prototyyppiolion kaikki kentät.
 
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.png" >
