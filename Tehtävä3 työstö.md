@@ -10,6 +10,10 @@ Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion pro
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.png" >
 
 
+Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Esimerkiksi jos oliot jakavat samoja  metodeita tai muuttujia voidaan ne siirtää perittäväksi ylemmältä prototyyppioliolta, jolloin päästään eroon turhasta koodin toistosta.
+
+Tähän esimerkki
+
 ## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
 
 ##  b) koodin turhan kopioimisen välttäminen, koodin uudelleenkäyttö.
