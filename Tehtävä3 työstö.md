@@ -5,7 +5,7 @@ Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liitty
 
 Prototyyppiperiytyminen perustuu Object ja Function olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioina joiden avulla luodaan uusia olioita ja funktioita.
 
-Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät Function-funktion prototyyppiolion kaikki kentät.
+Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät lisäksi Function-funktion prototyyppiolion kaikki kentät.
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.png" >
 
