@@ -12,6 +12,8 @@ PÄIVITÄ KORJATTU KUVA
 
 ### Prototyyppiketju ja __proto__-kenttä
 
+Jokaisella oliolla on yksi kenttä "minun prototyyppini", joka osoittaa kyseisen olion prototyyppiolioon.Tämän linkin olion prototyyppiin, saa "luokkametodilla" Object.getPrototypeOf:(olio). Jokaisella oliolla on myös kenttä _proto_ joka osoittaa oman prototyyppiketjun lähimpään prototyyppiin.Käsky x.__proto__ ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten prototyypin selvittämiseen on varmempaa käyttää ensimmäistä.   ???tarkasta menikö tämä juttu nyt oikein...
+
 "Kun olion x kenttään viitataan arvoa kysellen, ensin etsitään olion omista kentistä. Ellei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Ellei niistäkään löydy haettua, tutkitaan olio Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin voidaan edetä aina Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka.
 Siihen ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Jos kentän arvoa haettaessa päästään ketjun loppuun haettua kenttää löytämättä, palautetaan arvo undefined."Suoraa Lainausta muokkaa...
 
