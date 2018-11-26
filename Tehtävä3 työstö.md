@@ -20,6 +20,15 @@ Siihen ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Jos kent
 
 "Jokaisella oliolla on kenttä oman prototyyppiketjun lähimpään prototyyppiin. Kentän nimi on __proto__ (kaksi alaviivaa alussa ja lopussa)."Suoraa Lainausta muokkaa...
 
+** Eli kuvan konstruktorifunktion F prototyyppiketju menisi seuraavasti.
+F.__proto__===Function.prototype
+F.__proto__.__proto__===Object.prototype
+F.__proto__.__proto__.__proto__===null
+
+Funktio "F perii yleiset funktio-ominaisuutensa Function-funktion prototyyppioliolta ja yleiset olio-ominaisuutensa Object-funktion prototyyppioliolta."
+
+
+
 ### Prototyyppiperinnän käyttö copy-paste -koodin välttämiseksi
 Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Esimerkiksi jos oliot jakavat samoja  metodeita tai muuttujia voidaan ne siirtää perittäväksi ylemmältä prototyyppioliolta, jolloin päästään eroon turhasta koodin toistosta.
 
