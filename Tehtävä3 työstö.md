@@ -1,7 +1,7 @@
 
 # 3. oliot, protoryypit ja periytyminen
 
-Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion prototyyppi ja prototyyppiolio olio ovat sama asia.
+Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion prototyyppi ja prototyyppiolio-olio ovat sama asia.
 
 Prototyyppiperiytyminen perustuu Object ja Function olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioina joiden avulla luodaan uusia olioita ja funktioita.
 
