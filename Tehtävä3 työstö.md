@@ -3,12 +3,20 @@
 
 Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion prototyyppi ja prototyyppiolio-olio ovat sama asia.
 
-Prototyyppiperiytyminen perustuu Object ja Function olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioina joiden avulla luodaan uusia olioita ja funktioita.
+Prototyyppiperiytyminen perustuu **Object ja Function** olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioina joiden avulla luodaan uusia olioita ja funktioita.
 
 Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät lisäksi Function-funktion prototyyppiolion kaikki kentät.
 
 PÄIVITÄ KORJATTU KUVA
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.png" >
+
+### Prototyyppiketju ja __proto__-kenttä
+
+"Kun olion x kenttään viitataan arvoa kysellen, ensin etsitään olion omista kentistä. Ellei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Ellei niistäkään löydy haettua, tutkitaan olio Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin voidaan edetä aina Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka.
+Siihen ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Jos kentän arvoa haettaessa päästään ketjun loppuun haettua kenttää löytämättä, palautetaan arvo undefined."Suoraa Lainausta muokkaa...
+
+
+"Jokaisella oliolla on kenttä oman prototyyppiketjun lähimpään prototyyppiin. Kentän nimi on __proto__ (kaksi alaviivaa alussa ja lopussa)."Suoraa Lainausta muokkaa...
 
 ### Prototyyppiperinnän käyttö copy-paste -koodin välttämiseksi
 Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Esimerkiksi jos oliot jakavat samoja  metodeita tai muuttujia voidaan ne siirtää perittäväksi ylemmältä prototyyppioliolta, jolloin päästään eroon turhasta koodin toistosta.
