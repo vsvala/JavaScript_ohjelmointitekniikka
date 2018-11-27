@@ -41,3 +41,5 @@ Tähän esimerkki
 Pyrkikää hahmottamaan ja löytämään, millaiset JavaScriptin ohjelmointitekniikat mahdollisimman hyvin palvelisivat näitä tavoitteita. Perusteluja tarvitaan!
 
 
+## perintä prototyypilltä...
+## perintä Object.createn avulla (huom varovaisuus--> kaksjalkinen leijona!!!)
