@@ -21,6 +21,9 @@ JavaScriptin perintä perustuu __proto__ -kenttiin, joista muodostuu keskenään
 "Kun olion x kenttään viitataan arvoa kysellen, ensin etsitään olion omista kentistä. Ellei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Ellei niistäkään löydy haettua, tutkitaan olio Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin voidaan edetä aina Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka.
 Siihen ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Jos kentän arvoa haettaessa päästään ketjun loppuun haettua kenttää löytämättä, palautetaan arvo undefined."Suoraa Lainausta muokkaa...
 
+
+tähän voisi ottaa koodi esimerkin ja piirtää...
+
 ** Eli kuvan konstruktorifunktion F prototyyppiketju menisi seuraavasti.
 F.__proto__===Function.prototype
 F.__proto__.__proto__===Object.prototype
