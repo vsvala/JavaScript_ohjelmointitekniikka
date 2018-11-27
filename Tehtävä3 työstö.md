@@ -1,23 +1,24 @@
 
 # 3. oliot, protoryypit ja periytyminen
 
-Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion prototyyppi ja prototyyppiolio-olio ovat sama asia.
+Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion, prototyyppi ja prototyyppiolio-olio ovat sama asia.
 
 Prototyyppiperiytyminen perustuu **Object ja Function** olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioina joiden avulla luodaan uusia olioita ja funktioita.
 
-Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät lisäksi Function-funktion prototyyppiolion kaikki kentät.
+Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät lisäksi Function-funktion prototyyppiolion kentät. Konstruktorifunktioiden prototyyppiolioista muodostuu linkitettyjä perintä ketjuja.
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.jpg" >
 
 ### Prototyyppiketju ja __proto__-kenttä
 
-Jokaisella oliolla on yksi kenttä "minun prototyyppini", joka osoittaa kyseisen olion prototyyppiolioon.Tämän linkin olion prototyyppiin, saa "luokkametodilla" Object.getPrototypeOf:(olio). Jokaisella oliolla on myös kenttä _proto_ joka osoittaa oman prototyyppiketjun lähimpään prototyyppiin.Käsky x.__proto__ ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten prototyypin selvittämiseen on varmempaa käyttää ensimmäistä.   ???tarkasta menikö tämä juttu nyt oikein...
+Jokaiselta oliolta löytyy yksi kenttä _proto_ "minun prototyyppini", jonka osoittaa oman prototyyppiketjun lähimpään prototyyppiolioon. Luokkametodilla Object.getPrototypeOf(olio) saa selvitettyä mihin prototyyppiolioon _proto_ kenttä viittaa. Toinen tapa selvittää asia a on Käsky  x.__proto__, mutta tämä ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten on varmempaa käyttää ensimmäistä tapaa.
+
+JavaScriptin perintä perustuu _proto_ -kenttiin, joista muodostuu keskenään perintäketjuja. _proto_ kenttä viittaa aina perittävään prototyyppiolioon, jonka -proto kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu prototyyppiketjua ylöspäin aina Function funktion prototyyppikenttään asti joka osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyy Object-funktion prototyyppiolioon.
+
+
 
 "Kun olion x kenttään viitataan arvoa kysellen, ensin etsitään olion omista kentistä. Ellei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Ellei niistäkään löydy haettua, tutkitaan olio Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin voidaan edetä aina Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka.
 Siihen ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Jos kentän arvoa haettaessa päästään ketjun loppuun haettua kenttää löytämättä, palautetaan arvo undefined."Suoraa Lainausta muokkaa...
-
-
-"Jokaisella oliolla on kenttä oman prototyyppiketjun lähimpään prototyyppiin. Kentän nimi on __proto__ (kaksi alaviivaa alussa ja lopussa)."Suoraa Lainausta muokkaa...
 
 ** Eli kuvan konstruktorifunktion F prototyyppiketju menisi seuraavasti.
 F.__proto__===Function.prototype
