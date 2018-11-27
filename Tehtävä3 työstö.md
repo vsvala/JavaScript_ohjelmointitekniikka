@@ -1,4 +1,7 @@
 
+http://ohtekjs.github.io/#olioliteraalitetc
+tän lopussa ...
+
 # 3. oliot, protoryypit ja periytyminen
 
 Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion, prototyyppi ja prototyyppiolio-olio ovat sama asia.
