@@ -7,7 +7,7 @@ Prototyyppiperiytyminen perustuu **Object ja Function** olioihin(funktioihin)
 
 Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät lisäksi Function-funktion prototyyppiolion kaikki kentät.
 
-<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka" >
+<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/js%20(1).png" >
 
 ### Prototyyppiketju ja __proto__-kenttä
 
