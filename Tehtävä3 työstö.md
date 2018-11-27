@@ -8,15 +8,15 @@ Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liitty
 
 Prototyyppiperiytyminen perustuu **Object ja Function** olioihin(funktioihin), jotka pitävät sisällään joukon kenttiä, kielen peruskalustoa. Ne molemmat toimivat myös konstruktorifunktioina joiden avulla luodaan uusia olioita ja funktioita.
 
-Kuten alla oleva kuva havainnollistaa kaikki oliot perivät Object-funktion prototyyppiolion kentät. Kaikki funktiot puolestaan perivät lisäksi **Function-funktion** prototyyppiolion kentät. Konstruktorifunktioiden prototyyppiolioista muodostuu linkitettyjä perintäketjuja.
+Kuten alla oleva kuva havainnollistaa kaikki oliot perivät **Object-funktion prototyyppiolion** kentät. Kaikki funktiot puolestaan perivät lisäksi **Function-funktion prototyyppiolion** kentät. 
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/Untitled%20Diagram.jpg" >
 
 ### __ proto__-kenttä ja prototyyppiketju
 
-Jokaiselta oliolta löytyy yksi kenttä **__proto__** "minun prototyyppini", jonka osoittaa oman prototyyppiketjun lähimpään prototyyppiolioon. Luokkametodilla Object.getPrototypeOf(olio) saa selvitettyä mihin prototyyppiolioon __proto__ kenttä viittaa. Toinen tapa selvittää asia a on Käsky  x.__proto__, mutta tämä ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten on varmempaa käyttää ensimmäistä tapaa.
+Jokaiselta oliolta löytyy yksi kenttä **__proto__** "minun prototyyppini", jonka osoittaa oman prototyyppiketjun lähimpään prototyyppiolioon.Konstruktorifunktioiden prototyyppiolioista muodostuu linkitettyjä perintäketjuja. Luokkametodilla Object.getPrototypeOf(olio) saa selvitettyä mihin prototyyppiolioon __proto__ kenttä viittaa. Toinen tapa selvittää asia a on Käsky  x.__proto__, mutta tämä ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten on varmempaa käyttää ensimmäistä tapaa.
 
-JavaScriptin perintä perustuu __proto__ -kenttiin, joista muodostuu keskenään perintäketjuja. __proto__ kenttä viittaa aina perittävään prototyyppiolioon, jonka __proto__ -kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu **prototyyppiketjua** ylöspäin aina Function funktion prototyyppikenttään asti jonka __proto__-kenttä osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyykin Object-funktion prototyyppiolioon.
+JavaScriptin perintä perustuu siis __proto__ -kenttiin, joista muodostuu keskenään perintäketjuja. __proto__ kenttä viittaa aina perittävään prototyyppiolioon, jonka __proto__ -kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu **prototyyppiketjua** ylöspäin aina Function funktion prototyyppikenttään asti jonka __proto__-kenttä osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyykin Object-funktion prototyyppiolioon.
 
 
 ------------------------------alla vielä suoraa lainausta:
