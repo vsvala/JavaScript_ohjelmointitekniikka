@@ -41,5 +41,9 @@ Tähän esimerkki
 Pyrkikää hahmottamaan ja löytämään, millaiset JavaScriptin ohjelmointitekniikat mahdollisimman hyvin palvelisivat näitä tavoitteita. Perusteluja tarvitaan!
 
 
+
+
 ## perintä prototyypilltä...
 ## perintä Object.createn avulla (huom varovaisuus--> kaksjalkinen leijona!!!)
+JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on  kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina odotetulla tavalla ja saattaa aiheuttaa ongelmia esim.....
+esimerkki???
