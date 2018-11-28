@@ -162,7 +162,7 @@ return typeof value==='boolean';} </p>
 
 <h2>1. Sulkeumaan suljetut vapaat muuttujat säilyvät sulkeuman suorituksen jälkeiseen aikaan.</h2>
 
-<div class="highlight">
+```
 
 <p>var tulo =(function () {</p>
 <p> var eka = 0;<p>
@@ -176,13 +176,13 @@ return typeof value==='boolean';} </p>
 <p>console.log(tulo()); //4 </p>
 <p>console.log(tulo()); //9 </p>
 <p>console.log(tulo()); //16 </p>
-</div>
+```
 
 
 <h2>2. Sulkeumaan suljetuttujen vapaiden muuttujien määritellyt funktio päättyy, mutta sulkeuma säilyy</h2>
 
-<div class="highlight">
 
+```
 <p>function kerro(nimi) {</p>
 <p>    var tervehdys = 'Hei ';<p/> 
 <p>    var sanoma = function(viesti) { </p>
@@ -193,7 +193,7 @@ return typeof value==='boolean';} </p>
 <p>tulosta = kerro('Noora');</p> 
 <p>tulosta('kohta syömään!');</p>  
 <p>//Hei Noora, kohta syömään!</p>
-</div>
+```
 
 <p>Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt </p>
 
