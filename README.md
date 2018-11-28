@@ -22,26 +22,26 @@ Jos muuttujalle ei anna arvoa heti luontihetkellä, saa se automaattisesti arvok
 
 Jos on tarpeen selvittää onko muuttujan arvo undefined vai null, voitaisiin se tehdä seuraavalla tavalla:
 
-
-<p>var a;</p>
-<p>var b = null;</p>
-<p>typeof a === undefined // true;</p>
-<p>a === undefined // true;</p>
-<p>b === null // true;</p>
-
+```
+var a;
+var b = null;
+typeof a === undefined // true;
+a === undefined // true;
+b === null // true;
+```
 
 Tyyppien tarkistamisen tarve kasvaa esimerkiksi käsiteltäessä käyttäjän syöttämiä arvoja. Javascript ei itsestään huomauta väärien tyyppien käytöstä, joten kaikki tarkistukset jäävät  ohjelmoijan vastuulle. JavaScript kielessä on joukko arvon tyypin tutkimisen välineitä, Tässä laatimamme ehdotuslista kirjastofunktioista, joilla arvojen tyyppejä voitaisiin tarkastaa.
 
 Type of operaattori kertoo sille operandina annettavan muuttujan tyypin ja sitä voidaan käyttää yleisesti erilaisten tyyppien tarkastukseen.  Se ei kuitenkaan ole kaikissa tapauksissa tarkin tapa  erotella tyyppejä, sillä se ei osaa esimerkiksi erottaa erityyppisiä objekteja. Se määrittelee esim. että null on objekti ja NaN on numero.
 
-
+```
 <p>typeof "Ville";                 // string</p> 
 <p>typeof 4;                      // number</p>
 <p>typeof "4";                    // string</p>
 <p>typeof NaN;                    // number</p>
 <p>typeof null;                   // object </p>
 
-
+```
 ## Kokonaisluvut ja numeeriset arvot
 
 <p>JavaScript kielessä ei ole Java kielestä poiketen erillistä kokonaislukutyyppiä, vaan numeerinen lukuarvo number, joka voi sisältää sekä kokonaislukuja että liukulukuja.  Käsittääksemme kokonaislukujen tarkistaminen ei aina ole välttämätöntä , koska­  tarvittaessa likuluvun saa muutettua kokonaisluksi helposti esimerkiksi Math.floor-funktiolla. Jos kuitenkin tarkastusta on tarpeellista tehdä esim, halutessamme käyttäjältä tarkan kokonasilukusyötteen, voitaisiin se tehdä esimerksi seuraavilla tarkastusfunktioilla. </p>
@@ -61,8 +61,7 @@ Type of operaattori kertoo sille operandina annettavan muuttujan tyypin ja sitä
 </pre></div>
 
 Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascriptistä löytyvän valmiin sisäänrakennetun tarkastusfunktion.
-
-<div class="highlight">
+```
 <p>Number.isInteger(3);         //true</p>
 
 <p>Number.isInteger(0.1);       //false </p>
@@ -72,48 +71,47 @@ Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascri
 
 <p>Number.isNaN(NaN);           //true </p>
 <p><pNumber.isNaN(3);             //false</p>
-</div>
 
+```
 <p>Liukuluvun tarkastukseen toimii seuraava tarkastusfunktio, joka tarkastaa ettei luvun desimaaliosa ole nolla:</p>
-<div class="highlight">
+```
 <p>function isDouble (value) {</p> 
 <p> return typeof value === "number" && !isNaN(value) && value !== Math.floor(n)}</p>
-</div>
+```
 
 ## Merkkijonot<
 <p>Merkkijonojen tarkastukseen kävisi seuraava tarkastusfunktio:</p>
 
-<div class="highlight">
-<p>function isString(value){</p>
+```
+function isString(value){</p>
 <p>return typeof value ==='string'</p>
-</div>
+```
 
 
 <p>Java Scriptissä ei ole yhtämerkkiä vastaavaa tietotyyppiä char kuten Javassa. Jos tarvii selvittää onko esim. annettu merkki yhden kirjaimen mittainen, siihen kävisi seuraava tarkastusfunktio: </p>
-<div class="highlight">
+```
 <p>function isChar(i) {</p>
 <p> return isString(i) && i.length == 1;}</p>
-</div>
+```
 
 ## Totuusarvot
 <p>Totuusarvoja voitaisiin tarkestella esim. seuraavalla tarkastusfunktiolla:</p>
 
-<div class="highlight">
+```
 <p>function isBoolean(value){ </p>
 return typeof value==='boolean';} </p>
-</div>
+```
 
 
 ## Taulukot
 <p>Seuraava funktio toimii tarkastusfunktiona taulukolle. Kutsuttaessa eri arvoilla se palauttaa true tai false.</p>
 
-<div class="highlight">
-
+```
 <p>function isArray(value) {</p>
 <p>    return value instanceof Array;}</p>
 <p>isArray(2)   //false</p>
 <p>isArray([2,1]) //true </p>
-</div>
+```
 
 # Funktionaalinen vai imperatiivinen ohjelmointi
 ### Imperatiivinen ohjelmointi</h3>
@@ -124,7 +122,7 @@ return typeof value==='boolean';} </p>
 <p>Funktionaalisen ohjelmoinnin yhtenä etuna voidaan nähdä sen matemaattisuuden jolloin ohjelmien oikeiksi todistaminen  on helppompaa. Myös koska sivuvaikutuksia ei ole, on funktioiden suoritusjärjestys vapaata ja kääntäjä voi optimoida samanlaisia funktiokutsuja yhdeksi. Funktioiden käsittelylle on myös parmmat tuet ja  JavaScriptissä  voidaankin käyttää nk. Korkeamman asteen funktioita: funktioita voidaankin käyttää parametreina ja funktiot voivat kutsua ja palauttaa funktioita.  Funktionaalista tyyliä käytettäessä ohjelmointikieli on monesti yksinkertaisempaa suunnitella ja toteuttaa ja koodin määrä usein lyhenee. </p>
 <p>Seuraavassa esimekki  JavaScriptin yksinkertaisemman korkeamman asteen taulukonkäsittely MAP funktion käytöstä verrattuna saman asian tekevään toistolausekkeella toetutettuun metodiin, joka on huomattavasti pidempi.</p>
 
-<div class="highlight">
+```
 <p>var animals=[{name: ’Fill’, species:’rabbit’}, {name:’Caro’, Species: ‘dog’}, {name:’Val’, Species: ‘dog’}]</p>
 <br>
 <p>var names=animals.map(animal) =>animal.name)</p>
@@ -132,15 +130,15 @@ return typeof value==='boolean';} </p>
 <p>var names =[];</p>
 <p>for (var I =0; i &lt; animals.length; i++){ </p>
 <p>names.push(animal[i].name)} </p>
-</div>
+```
 
 <p>Toinen esimerkki  kuinka helposti taulukon arvoja pystytään tuplaamaan MAP funktion  avulla.</p>
 
-<div class="highlight">
+```
 <p>var array1 = [1, 4, 9, 16]; </p>
 <p>const map1 = array1.map(x => x * 2);</p>
 <p>console.log(map1);   // expected output: Array [2, 8, 18, 32]</p>
-</div>
+```
 
 <p>Mielestämme JavaScriptin kaksiparadigmaisuudessa ei pitäisi ottaa liian jyrkkää kantaa puoleen tai toiseen, vaan järkevintä olisi hyödyntää molempien paradigmojen ohjelmointityyliä sen mukaan mikä olisi kulloiseenkin ohjelmointiprojektiin sopivinta. Olisikin hyvä  opetella molempia tyylejä, jotta oppisi valitsemaan tilanteeseen sopivimman. Imperatiivisen Java kielen äidinkilenään oppineelle funktionaalisen tyylin uusiin ajatusmalleihin tutustuminen tuottaa varmastikin aluksi päänvaivaa. Uskomme kuitenkin, että siihen tutustuminen ja käytön oppiminen on vaivan arvoista.</p>
 
