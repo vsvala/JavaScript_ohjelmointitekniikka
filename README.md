@@ -6,7 +6,7 @@ Lopullinen versio
 [Oikea versio osoitteessa:](https://www.cs.helsinki.fi/u/svsv/js.html)
 
 1. Tyyppiturvallsuuden tavoittelua	
-2. Sulkeuma, Oliot 
+2. [Sulkeuma, Olio](#t2)
 3. [create an anchor](#t3)
 4. tehtävät
 
@@ -144,7 +144,8 @@ return typeof value==='boolean';} </p>
 
 
 
-# Tehtävä 2: Sulkeuma, Oliot
+# t2 sulkeuma, Oliot 
+#t2
 ## Sulkeuma ja sen käyttötavat
 <h3>Näkyvyysalue</h3>
 <p>Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikalliset(local) ja globaalit(global). Näkyvyysalue määrittelee, missä ja milloin muuttuja on olemasssa ja sen arvo on saatavilla. Totutusta Java kielen lohkoajattelusta poiketen Javascript kielssä funktio muodostaa oman näkyvyysalueensa(scope). Tällöin funktion muodolliset parametrit, paikalliset muuttujat ja paikalliset funktiot näkyvät ja ovat käytettävissä vain ko.funktion sisällä. Funktion näkyvyyaluetta kutsutaan toisinaan myös viittausympäristöksi tai nimiavaruudeksi. JavaScript kieli ei ole Javan tavoin "litteä", sillä funktiot voivat myös muodostaa useita sisäkkäisiä näkyyysalueita/miniavaruuksia. Perusideana JavaScriptin sisäkkäisillä näkyvyysalueilla on se, että "sisältä näkee ulos, mutta ulkoa ei näe sisään". Sulkeuma poikkeaa näkyvyysalueen normaalista määrittelystä, sillä siinä funktio suoritetaan oman näkvyysalueen sijasta sulkeuman määrittelyn funktion näkyvyysalueessa.</p>
