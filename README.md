@@ -163,7 +163,6 @@ return typeof value==='boolean';} </p>
 <h2>1. Sulkeumaan suljetut vapaat muuttujat säilyvät sulkeuman suorituksen jälkeiseen aikaan.</h2>
 
 ```
-
 <p>var tulo =(function () {</p>
 <p> var eka = 0;<p>
 <p>var toka = 0;</p>
@@ -204,16 +203,16 @@ return typeof value==='boolean';} </p>
 
 ```
 let noora = {nimi: "Noora", ika: 35};
-
 ```
 <p>tai määritellään ominaisuudet jälkeenpäin:</p>
+
 ```
 let virva = {};
 virva.nimi = "Virva";
 virva.ika = 18;
-
 ```
 <p><b>Object Olion avulla:</b></p>
+
 ```
 let noora = new Object();
 noora.nimi = "Noora";
@@ -244,6 +243,7 @@ console.log(noora.tuplaaIka()); //70</p>
 
 ```
 <p><b>tai vielä Object.create-funktion avulla:</b></p>
+
 ```
 var Henkilo = {
   nimi : "",
@@ -276,7 +276,7 @@ this.yernow - this.syntymavuosi}
 ```
 <h3>Olion metodit</h3>
 
-<p>Javasta poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().</p>
+Javasta poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().
 
 ```
 var Henkilo = {
@@ -299,7 +299,7 @@ Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittae
 pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.
 
 <p><b>Olion kenttiin viittaaminen ja läpikäynti</b></p>
-<p>Olion kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku eli  kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi. Olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.</p>
+Olion kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku eli  kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi. Olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
 
 ```	
  var elain = {nimi: 'Miuku'}
@@ -309,6 +309,7 @@ pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löyd
 ```
 
 Koska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.
+
 ```
 Object.prototype.lintu = "Peippo";
 var elain = {kissa: "Miuku"};
@@ -326,6 +327,7 @@ if (elain.hasOwnProperty(i)) {
 console.log(i); // tulostaa vain kissa }
 ```
 Samaan tyyliin saataisiin seuraavilla selville olion numeroimattomien kenttien kentttämimet käyttämällä funktiota: Object.getOwnPropertyNames(o) 
+
 ```
 var sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};
 write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
@@ -333,7 +335,7 @@ write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
 ```
 <p><b>Olion poisto</b></p>
 <p>Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.</p>
-<div class = "highlight">
+
 
 ```
 var olio={
