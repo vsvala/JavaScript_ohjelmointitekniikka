@@ -77,7 +77,7 @@ Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascri
 <p> return typeof value === "number" && !isNaN(value) && value !== Math.floor(n)}</p>
 ```
 
-## Merkkijonot<
+## Merkkijonot
 <p>Merkkijonojen tarkastukseen kävisi seuraava tarkastusfunktio:</p>
 
 ```
@@ -373,9 +373,11 @@ Kuten alla oleva kuva havainnollistaa kaikki oliot perivät **Object-funktion p
 
 ### __ proto__-kenttä ja prototyyppiketju
 
-Jokaiselta oliolta löytyy yksi kenttä **__proto__** "minun prototyyppini", jonka osoittaa oman prototyyppiketjun lähimpään prototyyppiolioon.Konstruktorifunktioiden prototyyppiolioista muodostuu linkitettyjä perintäketjuja. Luokkametodilla Object.getPrototypeOf(olio) saa selvitettyä mihin prototyyppiolioon __proto__ kenttä viittaa. Toinen tapa selvittää asia a on Käsky  x.__proto__, mutta tämä ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten on varmempaa käyttää ensimmäistä tapaa.
+Jokaiselta oliolta löytyy yksi kenttä **__proto__** "minun prototyyppini", jonka osoittaa oman prototyyppiketjun lähimpään prototyyppiolioon.Konstruktorifunktioiden prototyyppiolioista muodostuu linkitettyjä perintäketjuja.
 
-JavaScriptin perintä perustuu siis __proto__ -kenttiin, joista muodostuu keskenään perintäketjuja. __proto__ kenttä viittaa aina perittävään prototyyppiolioon, jonka __proto__ -kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu **prototyyppiketjua** ylöspäin aina Function funktion prototyyppikenttään asti jonka __proto__-kenttä osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyykin Object-funktion prototyyppiolioon.
+JavaScriptin perintä perustuu siis ´__proto__´ -kenttiin joka viittaa aina perittävään prototyyppiolioon, jonka´__proto__´  -kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu näin muodostuvaa **prototyyppiketjua** ylöspäin aina Function funktion prototyyppikenttään asti, jonka __proto__-kenttä osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyykin Object-funktion prototyyppiolioon, jollei sitä erikseen katkaista. 
+
+Luokkametodilla Object.getPrototypeOf(olio) saa selvitettyä mihin prototyyppiolioon __proto__ kenttä viittaa. Toinen tapa selvittää asia a on Käsky  x.__proto__, mutta tämä ei kuitenkaan välttämättä toimi vanhoilla selaimilla, joten on varmempaa käyttää ensimmäistä tapaa.
 
 "Kun olion x kenttään viitataan arvoa hakien, haetaan ensin olion omista kentistä. Jos ei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Jos niistäkään ei löydy haettua arvoa, etsitään Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin edetään Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka, mihin ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Tällöin palautetaan arvo undefined.
 
