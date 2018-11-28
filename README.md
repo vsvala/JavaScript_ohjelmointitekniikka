@@ -220,19 +220,31 @@ virva.ika = 18;
 
 ```
 <p><b>Object Olion avulla:</b></p>
-<div class ="highlight">
-<p>let noora = new Object(); noora.nimi = "Noora"; noora.ika = 35;</p></div>
+
+```
+let noora = new Object();
+noora.nimi = "Noora";
+noora.ika = 35;
+```
 <p>Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia. Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla. </p>
 <div>
 
 <p><b>Konstruktorifunktio</b><p/>
-
-<div class="highlight">
-<p>function Henkilo(nimi, ika) { this.nimi = nimi; this.ika = ika; }</p><p> noora = new Henkilo("Noora", 35);</p><p>virva = new Henkilo("Virva", 5);</p>
-</div>
   
+  ```
+function Henkilo(nimi, ika) {
+  this.nimi = nimi;
+  this.ika = ika;
+}
+noora = new Henkilo("Noora", 35);
+var tokahenkilo = new Henkilo("Virva", 15);
+
+console.log(noora.ika) //35
+console.log(tokahenkilo.nimi) //Virva
+```
 
 <p>Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta. </p>
+
 <div class = "highlight">
 <p>Henkilo.prototype.tuplaaIka = function() {return this.ika * 2} console.log(noora.tuplaaIka()); //70</p>
 </div>
@@ -303,13 +315,15 @@ pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löyd
 
 <p><b>Olion kenttiin viittaaminen ja läpikäynti</b></p>
 <p>Olion kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku eli  kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi. Olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.</p>
-<div class = "highlight">
-<p> var elain = {nimi: 'Miuku'}
-	elain.nimi ; //Miuku
-	elain[‘nimi’]:  //Miuku</p>
-</div>
 
-oska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.
+```	
+ var elain = {nimi: 'Miuku'}
+	elain.nimi ; //Miuku
+	elain[‘nimi’]:  //Miuku
+
+```
+
+Koska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.
 ```
 Object.prototype.lintu = "Peippo";
 var elain = {kissa: "Miuku"};
@@ -548,36 +562,7 @@ Huomaa myös, että oliolion prototyyppiolion kentän tai metodin poisto poistaa
 olion kentistä:
 "Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
-**Olion kenttiin viittaaminen ja läpikäynti**
-olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla  hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
-```	
- var elain = {nimi: 'Miuku'}
-	elain.nimi ; //Miuku
-	elain[‘nimi’]:  //Miuku
 
-```
- 
- Koska olioden kentät assosiaatiotaulukoita, olioiden  numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio raneteella, mukana tulostuu myös perityt kentät
-
-``` 
-Object.prototype.lintu = "Peippo";
-var nisakas {kissa: "Miuku"};
-for(var i in elain) {
-    console.log(i); // tulostaa sekä lintu että kissa
-}
-
- lisää kenttirn läpikäynti mahdollisuuksia...???
- ```
-Jos halutaan selvittää pelkästään olion omat kentät voisi sen suorittaa Tämä on mahdollista käyttäen Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa
-``` 
- Object.prototype.lintu = "Peippo";
-var nisakas {kissa: "Miuku"};
- for(var i in elain) {
-    if (nisakas.hasOwnProperty(i)) {
-        console.log(i);
-    }
-}
-  ```
 #t3
 # t3
 
