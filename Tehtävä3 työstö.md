@@ -18,9 +18,7 @@ Jokaiselta oliolta löytyy yksi kenttä **__proto__** "minun prototyyppini", jon
 
 JavaScriptin perintä perustuu siis __proto__ -kenttiin, joista muodostuu keskenään perintäketjuja. __proto__ kenttä viittaa aina perittävään prototyyppiolioon, jonka __proto__ -kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu **prototyyppiketjua** ylöspäin aina Function funktion prototyyppikenttään asti jonka __proto__-kenttä osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyykin Object-funktion prototyyppiolioon.
 
-"Kun olion x kenttään viitataan arvoa hakien, haetaan ensin olion omista kentistä.Jos ei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Jos niistäkään löydy haettua arvoa, etstään Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin estetääm Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka, mihin
-ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Tällöin palautetaan arvo undefined..
-
+"Kun olion x kenttään viitataan arvoa hakien, haetaan ensin olion omista kentistä. Jos ei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Jos niistäkään ei löydy haettua arvoa, etsitään Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin edetään Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka, mihin ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Tällöin palautetaan arvo undefined.
 
 ### Prototyyppiperinnän käyttö copy-paste -koodin välttämiseksi
 Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita tai ominaisuuksia, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta. Esimerkissä noora ja virva perivät molemmat asuinmaakseen Suomen.
@@ -39,7 +37,6 @@ console.log(virva.tuplaaIka()); //10
 console.log(virva.asuinmaa); //Suomi 
 console.log(noora.asuinmaa); //Suomi 
 ```
-
 
 Pidempiä perimisketjuja voidaan rakentaa korvaamalla olion prototyyppiolioita uudella oliolla seuraavasti. 
 
