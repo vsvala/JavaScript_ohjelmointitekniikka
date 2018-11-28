@@ -18,35 +18,20 @@ Jokaiselta oliolta löytyy yksi kenttä **__proto__** "minun prototyyppini", jon
 
 JavaScriptin perintä perustuu siis __proto__ -kenttiin, joista muodostuu keskenään perintäketjuja. __proto__ kenttä viittaa aina perittävään prototyyppiolioon, jonka __proto__ -kenttä puolestaan viittaa taas sen prototyyppiolioon. Perintä jatkuu **prototyyppiketjua** ylöspäin aina Function funktion prototyyppikenttään asti jonka __proto__-kenttä osoittaa null:ia. Normaalisti jokaisen olion prototyyppien ketju päättyykin Object-funktion prototyyppiolioon.
 
-
-------------------------------alla vielä suoraa lainausta:
-
-"Kun olion x kenttään viitataan arvoa kysellen, ensin etsitään olion omista kentistä. Ellei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Ellei niistäkään löydy haettua, tutkitaan olio Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin voidaan edetä aina Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka.
-Siihen ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Jos kentän arvoa haettaessa päästään ketjun loppuun haettua kenttää löytämättä, palautetaan arvo undefined."Suoraa Lainausta muokkaa...
-
-
-tähän voisi ottaa koodi esimerkin ja piirtää...
-
-** Eli kuvan konstruktorifunktion F prototyyppiketju menisi seuraavasti.
-F.__proto__===Function.prototype
-F.__proto__.__proto__===Object.prototype
-F.__proto__.__proto__.__proto__===null
-
-Funktio "F perii yleiset funktio-ominaisuutensa Function-funktion prototyyppioliolta ja yleiset olio-ominaisuutensa Object-funktion prototyyppioliolta."
-
-------------------
+"Kun olion x kenttään viitataan arvoa hakien, haetaan ensin olion omista kentistä.Jos ei löydy, tutkitaan olion Object.getPrototypeOf(x) kentät. Jos niistäkään löydy haettua arvoa, etstään Object.getPrototypeOf(Object.getPrototypeOf(x)), jne. Näin estetääm Object.prototype-kentän osoittamaan olioon eli Object-funktion prototyyppiolioon saakka, mihin
+ketju päättyy: Object.getPrototypeOf(Object.prototype)===null. Tällöin palautetaan arvo undefined..
 
 
 ### Prototyyppiperinnän käyttö copy-paste -koodin välttämiseksi
-Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita tai ominaisuuksia, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta.
+Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita tai ominaisuuksia, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta. Esimerkissä noora ja virva perivät molemmat asuinmaakseen Suomen.
 
 ```
-function Henkilo(nimi, ika) { this.nimi = nimi; this.ika = ika; }
+function Henkilo(nimi, ika) { this.nimi = nimi; this.ika = ika;  }
 
 noora = new Henkilo("Noora", 35);
 virva = new Henkilo("Virva", 5);
 
-Henkilo.prototype.tuplaaIka = function() {return this.ika * 2} 
+Henkilo.prototype.opiskelupaikka = "Helsingin yliopisto"} 
 Henkilo.prototype.asuinmaa = "Suomi"
 
 console.log(noora.tuplaaIka()); //70
@@ -56,8 +41,8 @@ console.log(noora.asuinmaa); //Suomi
 ```
 
 
+Pidempiä perimisketjuja voidaan rakentaa korvaamalla olion prototyyppiolioita uudella oliolla seuraavasti. 
 
-Pidempiä periytymisketjuja voidaan rakentaa myös korvaamalla prototyyppiolio uudella oliolla..... 
 ```
 function Elain() {
   this.reviiri = "puisto"
@@ -81,10 +66,6 @@ Peippo.prototype = new Lintu()
 var sirkku = new Peippo("Sirkku")
 
 
-
-
-
-
 sirkku.nimi;          // Sirkku"
 sirkku.lauluAani;     //"titityy"
 sirkku.siipienVari;   // ""
@@ -98,19 +79,10 @@ sirkku.paino;  // 30
 sirkku.reviiri; // "puisto"
  
  ```
- <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
+Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä  kaikkien ylempien olioden ominaisuuksia.
+
+<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
 
 
-## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
-
-##  b) koodin turhan kopioimisen välttäminen, koodin uudelleenkäyttö.
-
-Pyrkikää hahmottamaan ja löytämään, millaiset JavaScriptin ohjelmointitekniikat mahdollisimman hyvin palvelisivat näitä tavoitteita. Perusteluja tarvitaan!
-
-
-
-
-## perintä prototyypilltä...
-## perintä Object.createn avulla (huom varovaisuus--> kaksjalkinen leijona!!!)
-JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on  kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina odotetulla tavalla ja saattaa aiheuttaa ongelmia esim.....
-esimerkki???
+## perintä Object.createn avulla 
+JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käytön suhteen kannattaakin olla varovainen.
