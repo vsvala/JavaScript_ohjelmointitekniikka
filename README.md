@@ -57,6 +57,7 @@ Type of operaattori kertoo sille operandina annettavan muuttujan tyypin ja sitä
 </pre></div>
 
 Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascriptistä löytyvän valmiin sisäänrakennetun tarkastusfunktion.
+
 ```
 <p>Number.isInteger(3);         //true</p>
 
@@ -70,6 +71,7 @@ Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascri
 
 ```
 <p>Liukuluvun tarkastukseen toimii seuraava tarkastusfunktio, joka tarkastaa ettei luvun desimaaliosa ole nolla:</p>
+
 ```
 <p>function isDouble (value) {</p> 
 <p> return typeof value === "number" && !isNaN(value) && value !== Math.floor(n)}</p>
@@ -83,11 +85,11 @@ function isString(value){</p>
 <p>return typeof value ==='string'</p>
 ```
 
+Java Scriptissä ei ole yhtämerkkiä vastaavaa tietotyyppiä char kuten Javassa. Jos tarvii selvittää onko esim. annettu merkki yhden kirjaimen mittainen, siihen kävisi seuraava tarkastusfunktio: 
 
-<p>Java Scriptissä ei ole yhtämerkkiä vastaavaa tietotyyppiä char kuten Javassa. Jos tarvii selvittää onko esim. annettu merkki yhden kirjaimen mittainen, siihen kävisi seuraava tarkastusfunktio: </p>
 ```
-<p>function isChar(i) {</p>
-<p> return isString(i) && i.length == 1;}</p>
+function isChar(i) {
+return isString(i) && i.length == 1;}
 ```
 
 ## Totuusarvot
