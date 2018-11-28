@@ -351,40 +351,29 @@ write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
 <p>Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.</p>
 <div class = "highlight">
 
-<p>var olio={</p>
-<p>eka:1,</p>
-<p>toka:2,</p>
-<p>kolmas:3;</p>
-<p>}</p>
-<p>olio.eka=undefined;</p>
-<p>olio.toka=null;</p>
-<p>delete olio.kolmas;</p>
-<p> </p>
-<p>for(var i in olio) {</p>
-<p>if (olio.hasOwnProperty(i)) {</p>
-<p> console.log(i, '' + olio[i]);</p>
-</div>
+```
+var olio={
+eka:1,
+toka:2,
+kolmas:3
+};
+olio.eka=undefined;
+olio.toka=null;
+delete olio.kolmas;
+
+for(var i in olio) {
+    if (olio.hasOwnProperty(i)) {
+        console.log(i, '' + olio[i]);
+    }
+}  
+```
+
 <p>Ohjelma tulostaa m1 undefined ja m2 null. vain m3 on poistettu Huomaa myös, että oliolion prototyyppiolion kentän tai metodin poisto poistaa kentät kaikilta sen perineiltä olioilta.</p>
 
 <p><b>olion getterit ja setterit</p></b>
 
 <p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
-<p></p>
-<p></p>
-<div class = "highlight">
-</div>
-<div class = "highlight">
-</div>
 
-
-
-
-
-<br>
-
-<br>
-
-<br>
 
 <p>Lähteet(tehtävät1):</p>
 
@@ -537,30 +526,6 @@ write(noora.ika()); //18
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä  voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää,jos esim. vahngossa kirjoittaa kentän nimen väärin. Huom. Oleellinen ero arvoa sijoittaessa ja haetaessa on siis se, sijoittaessa jos kenttää ei ole, se lisätään, huolimatta siitä löytyykö sitä "ylemmästä oliosta" kun taas  haettaessa kuljetaan prototyyppiketjuapitkin aina Objectolioon asti kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.
  
   tähän esimerkki...kentän muutto?
-
-**poisto**
-Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.
-```
-var olio={
-eka:1,
-toka:2,
-kolmas:3
-};
-olio.eka=undefined;
-olio.toka=null;
-delete olio.kolmas;
-
-for(var i in olio) {
-    if (olio.hasOwnProperty(i)) {
-        console.log(i, '' + olio[i]);
-    }
-}  
-```
-Ohjelma tulostaa  m1 undefined ja m2 null. vain m3 on poistettu
-Huomaa myös, että oliolion prototyyppiolion kentän tai metodin poisto poistaa kentät kaikilta sen perineiltä olioilta.
- 
-olion kentistä:
-"Kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku, ..., kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi:
 
 
 #t3
