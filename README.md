@@ -6,8 +6,8 @@ Lopullinen versio
 [Oikea versio osoitteessa:](https://www.cs.helsinki.fi/u/svsv/js.html)
 
 1. Tyyppiturvallsuuden tavoittelua	
-2. [Sulkeuma, Olio](#tehtava2)
-3. [create an anchor](#tehtava3)
+2. [Sulkeuma, Olio](#tehtävä2)
+3. [create an anchor](#tehtävä3)
 4. tehtävät
 
 # 1. Tyyppiturvallsuuden tavoittelua	
