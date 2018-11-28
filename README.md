@@ -437,11 +437,11 @@ sirkku.paino;  // 30
 sirkku.reviiri; // "puisto"
  
  ```
-Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä kaikkien ylempien olioden ominaisuudet ja funktiot.
+Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä kaikkien ylempien olioden ominaisuudet ja funktiot. Arvoa sijoitettaessa ei edetä pitkin prototyyppiketjua. Vain arvoa kysyttäessä etsitään tarvittaessa ketjusta.
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
 
-
+ta.
 ## perintä Object.createn avulla 
 JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käytön suhteen kannattaakin olla varovainen.
 
