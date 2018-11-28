@@ -4,7 +4,7 @@ Virva Svala ja Noora Virolainen
 1. Tyyppiturvallsuuden tavoittelua	
 2. [Sulkeuma, Olio](#tehtävä2)
 3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
-4. tehtävät
+4. [tehtävät](#tehtävä4)
 
 # 1. Tyyppiturvallsuuden tavoittelua	
 
