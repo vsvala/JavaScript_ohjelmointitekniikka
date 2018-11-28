@@ -1,6 +1,4 @@
 
-http://ohtekjs.github.io/#olioliteraalitetc
-tän lopussa ...
 
 # 3. oliot, protoryypit ja periytyminen
 
@@ -83,3 +81,8 @@ Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Pe
 
 ## perintä Object.createn avulla 
 JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käytön suhteen kannattaakin olla varovainen.
+
+
+
+http://ohtekjs.github.io/#olioliteraalitetc
+
