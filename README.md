@@ -205,16 +205,20 @@ return typeof value==='boolean';} </p>
 <p>Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsitää myös avain- arvopareina, joita käytetään Hashmappien tavoin.</p
 <p><b>Yksinkertainen aaltosuluilla luotu olio:</b><p/>
 
-<div class="highlight">
-<p>let noora = {nimi: "Noora", ika: 35};</p>
-</div>
+
+```
+let noora = {nimi: "Noora", ika: 35};
+
+```
 
 <p>tai määritellään ominaisuudet jälkeenpäin:</p>
 
-<div class ="highlight">
-<p>let virva = {}; virva.nimi = "Virva"; virva.ika = 18;</p>
-</div>
+```
+let virva = {};
+virva.nimi = "Virva";
+virva.ika = 18;
 
+```
 <p><b>Object Olion avulla:</b></p>
 <div class ="highlight">
 <p>let noora = new Object(); noora.nimi = "Noora"; noora.ika = 35;</p></div>
@@ -307,27 +311,27 @@ pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löyd
 
 oska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.
 ```
-<p>Object.prototype.lintu = "Peippo";</p>
-<p>var elain = {kissa: "Miuku"};</p>
-<p>for(var i in elain) {</p>
-<p>console.log(i); // tulostaa sekä lintu että kissa }</p>
-</div>
+Object.prototype.lintu = "Peippo";
+var elain = {kissa: "Miuku"};
+for(var i in elain) {
+console.log(i); // tulostaa sekä lintu että kissa }
+
 ```
-<p>Jos halutaan selvittää pelkästään olion omat kentät yksi tapa on käyttää  Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa</p>
+Jos halutaan selvittää pelkästään olion omat kentät yksi tapa on käyttää  Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa
+	
+```
+Object.prototype.lintu = "Peippo";
+var elain = {kissa: "Miuku"};
+for(var i in elain) {
+if (elain.hasOwnProperty(i)) {
+console.log(i); // tulostaa vain kissa }
+```
+Samaan tyyliin saataisiin seuraavilla selville olion numeroimattomien kenttien kentttämimet käyttämällä funktiota: Object.getOwnPropertyNames(o) 
+```
+var sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};
+write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
 
-<div class = "highlight">
-<p>Object.prototype.lintu = "Peippo";</p>
-<p>var elain = {kissa: "Miuku"};</p>
-<p>for(var i in elain) {</p>
-<p> if (elain.hasOwnProperty(i)) {</p>
-<p>console.log(i); // tulostaa vain kissa }</p>
-</div>
-<p>Samaan tyyliin saataisiin seuraavilla selville olion numeroimattomien kenttien kentttämimet käyttämällä funktiota: Object.getOwnPropertyNames(o) </p>
-<div class = "highlight">
-<p>var sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};</p>
-<p>write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku</p>
-</div>
-
+```
 
 <p><b>Olion poisto</b></p>
 <p>Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.</p>
@@ -406,36 +410,6 @@ https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-
 Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikalliset(local) ja globaalit(global). Näkyvyysalue määrittelee, missä ja milloin muuttuja on olemasssa ja sen arvo on saatavilla. Totutusta Java kielen lohkoajattelusta  poiketen Javascript kielssä funktio muodostaa oman näkyvyysalueensa(scope). Tällöin funktion muodolliset parametrit, paikalliset muuttujat ja paikalliset funktiot näkyvät ja ovat käytettävissä vain ko.funktion sisällä. Funktion  näkyvyyaluetta kutsutaan toisinaan myös viittausympäristöksi tai nimiavaruudeksi. JavaScript kieli ei ole Javan tavoin "litteä", sillä funktiot voivat myös muodostaa useita sisäkkäisiä näkyyysalueita/miniavaruuksia. Perusideana JavaScriptin sisäkkäisillä näkyvyysalueilla on se, että "sisältä näkee ulos, mutta ulkoa ei näe sisään". Sulkeuma poikkeaa näkyvyysalueen normaalista määrittelystä, sillä siinä funktio suoritetaan oman näkvyysalueen sijasta sulkeuman määrittelyn funktion näkyvyysalueessa.
  
 ### sulkeuma
-
-JavaScriptissä funktio voi saada parametrikseen toisen funktion. Tällöin sulkeumassa funktion parametrin mukana voidaan välittää myös sen muuttujia. Jos funktion sisällä luodaan sisempi funktio, sen näkyvyysalueeseen kuuluvat myös ulomman funktion muuttujat. Eli kun parametrin saanut funktio suorittaa parametrina saamansa funktion, suoritetaan se parametrina annetun funktion näkyvyysalueessa.
-
-**Sidotut muuttujat** muuttujat ovat funktion muodollisia parametreja sekä funktion sisällä määriteltyjä paikallisia muuttujia. Näillä funktioilla on merkitys vain funktion sisällä ne ovat olemassa vain funktion suorituksen ajan.
-
-**Vapaat muuttujat** ovat funktion ulkopuolella olevia, mutta funktiossa viitattuja muuttujia, jotka funktiosta näkyvyyssääntöjen:"sisältä näkee ulos", sallimana nähdään.
-
-Nimensä "sulkeuma" (closure) saa siitä, kun funktio välitetään parametrina sen käyttämät vapaat muuttujat "suljetaan" mukaan funktion suoritusta varten.
-
-### 1. Sulkeumaan suljetut vapaat muuttujat säilyvät sulkeuman suorituksen jälkeiseen aikaan.
-
-esimerkki...
-
-### 2. Sulkeumaan suljetuttujen vapaiden muuttujien määritellyt funktio päättyy, mutta sulkeuma säilyy
-```
-function sulkeumaEsimerkki() {
-  var a = "sul", b = "keuma";
-  return function() { return a + b };
-}
-```
-
- 
-Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b  ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt. 
-
-### kapselointi...?
-
-"Edellä nähtiin, miten kutsuttu funktio voi sulkeuman vapaiden muuttujien avulla päästä muokkaamaan muuttujia, jotka eivät kuulu funktion omaan näkyvyysalueeseen. Noissa esimerkeissä nuo muuttujat ovat kuitenkin olleet olemassa – "kun funktio käynnistyy, sen paikalliset muuttujat syntyvät, kun funktion suoritus päättyy, sen paikalliset muuttujat häviävät" Tämä tekniikka osoittautuu aikanaan vahvaksi: sitä käyttäen voi toteuttaa mm. olioiden kenttien piilottamisen ja kätkettyjen kenttien "aksessorimetodit" Javan hengessä.(lainaus suoraan luentomatskusta... muokkaa)
-
-### ehkä...?vielä esimerkki kapseloinista?...sen turvallisuus?
-
 
 ## Oliot ja niiden käyttäytyminen 
 
