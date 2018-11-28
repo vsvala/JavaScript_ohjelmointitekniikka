@@ -7,7 +7,7 @@ Lopullinen versio
 
 1. Tyyppiturvallsuuden tavoittelua	
 2. Sulkeuma, Oliot 
-3. tehtävät
+3. [create an anchor](#t3)
 4. tehtävät
 
 # 1. Tyyppiturvallsuuden tavoittelua	
@@ -603,5 +603,6 @@ var nisakas {kissa: "Miuku"};
     }
 }
   ```
-
+#t3
+# t3
 
