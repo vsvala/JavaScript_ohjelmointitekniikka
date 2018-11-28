@@ -305,13 +305,14 @@ pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löyd
 	elain[‘nimi’]:  //Miuku</p>
 </div>
 
-<p>Koska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.</p>
-<div class = "highlight">
+oska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä voidaan käydä läpi taulukon tavoin for kentta in olio rakenteella. Tällöin mukana tulostuu myös perityt kentät.
+```
 <p>Object.prototype.lintu = "Peippo";</p>
 <p>var elain = {kissa: "Miuku"};</p>
 <p>for(var i in elain) {</p>
 <p>console.log(i); // tulostaa sekä lintu että kissa }</p>
 </div>
+```
 <p>Jos halutaan selvittää pelkästään olion omat kentät yksi tapa on käyttää  Object.prototype-olion hasOwnProperty-metodia. Seuraavassa metodissa tulostuu vain kissa</p>
 
 <div class = "highlight">
