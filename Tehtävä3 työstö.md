@@ -58,6 +58,46 @@ console.log(noora.asuinmaa); //Suomi
 
 
 Pidempiä periytymisketjuja voidaan rakentaa myös korvaamalla prototyyppiolio uudella oliolla..... 
+```
+function Elain() {
+  this.reviiri = "puisto"
+  this.paino = 0;
+  this.syo = function() {this.paino+10} {
+}
+
+function Lintu() {
+  this.siipienVari = "";
+  this.lauluAani = "titityy";
+}
+
+Lintu.prototype = new Elain()
+
+function Peippo(nimi) {
+  this.nimi = nimi;
+
+Peippo.prototype = new Lintu()
+
+
+var sirkku = new Peippo("Sirkku")
+
+
+
+
+
+
+sirkku.nimi;          // Sirkku"
+sirkku.lauluAani;     //"titityy"
+sirkku.siipienVari;   // ""
+sirkku.siipienVari = "musta";  //"musta"   
+sirkku.paino;  // 0
+
+sirkku.syo();  
+sirkku.syo();
+sirkku.syo();               
+sirkku.paino;  // 30
+sirkku.reviiri; // "puisto"
+ 
+ ```
 
 ## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
 
