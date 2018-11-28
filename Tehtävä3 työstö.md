@@ -57,7 +57,7 @@ console.log(noora.asuinmaa); //Suomi
 
 
 
-Periytymisketjuja voidaan rakentaa myös 
+Pidempiä periytymisketjuja voidaan rakentaa myös korvaamalla prototyyppiolio uudella oliolla..... 
 
 ## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
 
