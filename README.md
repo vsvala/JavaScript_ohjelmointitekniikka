@@ -460,8 +460,7 @@ Lähteet:
  <li>https://fi.wikipedia.org/wiki/Imperatiivinen_ohjelmointi</li>
  <li>https://plus.cs.hut.fi/o1/2017/k07/osa05/  </li>
  <li>https://fullstackopen.github.io/osa1/  </li>
- <li>Map -part 2 of Functional Programming in JAvaScript
-https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84&index=2  </li>
+ <li>Map -part 2 of Functional Programming in JAvaScript https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84&index=2 </li>
  
   <li>https://www.cs.helsinki.fi/u/wikla/OTjs/materiaalia/funktiot/</li>
   <li>https://www.cs.helsinki.fi/u/wikla/OTjs/materiaalia/oliot/</li>
@@ -470,7 +469,7 @@ https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-
   <li>http://www.mit.jyu.fi/opiskelu/seminaarit/ohjelmistotekniikka/funktion/  </li>
  <li> https://books.google.fi/books?id=DWs-DwAAQBAJ&pg=PA73&lpg=PA73&dq=JavaScript+sulkeuma&source=bl&ots=C5OQuDEQxF&sig=_aMEunKdE_Vhvc8forJOkYlDFWc&hl=fi&sa=X&ved=2ahUKEwi33bzI_t7eAhULiCwKHQl6CEUQ6AEwBnoECAUQAQ#v=onepage&q=JavaScript%20sulkeuma&f=false</li>
 
-http://ohtekjs.github.io/#olioliteraalitetc
+ <li>http://ohtekjs.github.io/#olioliteraalitetc</li>
 
 
 
