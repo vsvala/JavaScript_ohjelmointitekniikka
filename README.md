@@ -7,7 +7,7 @@ Lopullinen versio
 
 1. Tyyppiturvallsuuden tavoittelua	
 2. [Sulkeuma, Olio](#tehtävä2)
-3. [create an anchor](#tehtävä3)
+3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
 4. tehtävät
 
 # 1. Tyyppiturvallsuuden tavoittelua	
@@ -374,6 +374,10 @@ for(var i in olio) {
 
 <p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
 
+# tehtävä3
+# Oliot, protoryypit ja periytyminen
+
+
 
 <p>Lähteet(tehtävät1):</p>
 
@@ -405,5 +409,5 @@ https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-
  <li>  </li>
 
 
-# tehtävä3
+
 
