@@ -38,10 +38,7 @@ Funktio "F perii yleiset funktio-ominaisuutensa Function-funktion prototyyppioli
 
 
 ### Prototyyppiperinnän käyttö copy-paste -koodin välttämiseksi
-Perinnän avulla voidaan poistaa turhaa koodin kopioimista. 
-
-
-Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita tai ominaisuuksia, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta.
+Perinnän avulla voidaan poistaa turhaa koodin kopioimista. Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita tai ominaisuuksia, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta.
 
 ```
 function Henkilo(nimi, ika) { this.nimi = nimi; this.ika = ika; }
@@ -50,11 +47,17 @@ noora = new Henkilo("Noora", 35);
 virva = new Henkilo("Virva", 5);
 
 Henkilo.prototype.tuplaaIka = function() {return this.ika * 2} 
+Henkilo.prototype.asuinmaa = "Suomi"
 
 console.log(noora.tuplaaIka()); //70
 console.log(virva.tuplaaIka()); //10
-
+console.log(virva.asuinmaa); //Suomi 
+console.log(noora.asuinmaa); //Suomi 
 ```
+
+
+
+Periytymisketjuja voidaan rakentaa myös 
 
 ## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
 
