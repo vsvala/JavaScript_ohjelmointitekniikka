@@ -435,7 +435,7 @@ sirkku.paino;  // 30
 sirkku.reviiri; // "puisto"
  
  ```
-Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä  kaikkien ylempien olioden ominaisuuksia.
+Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä kaikkien ylempien olioden ominaisuudet ja funktiot.
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
 
