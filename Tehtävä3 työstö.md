@@ -98,6 +98,8 @@ sirkku.paino;  // 30
 sirkku.reviiri; // "puisto"
  
  ```
+ <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
+
 
 ## a) ratkaistavan ohjelmointiongelman käsitteiden luonteva mallintaminen ja siten siis ongelman ratkaisijan ajattelun selkeyttäminen ja helpottaminen.
 
