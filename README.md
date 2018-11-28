@@ -1,10 +1,6 @@
 # JavaScript_ohjelmointitekniikka: harjoitukset 2018
 Virva Svala ja Noora Virolainen
 
-
-Lopullinen versio
-[Oikea versio osoitteessa:](https://www.cs.helsinki.fi/u/svsv/js.html)
-
 1. Tyyppiturvallsuuden tavoittelua	
 2. [Sulkeuma, Olio](#tehtävä2)
 3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
@@ -180,9 +176,7 @@ return typeof value==='boolean';} </p>
 <p>console.log(tulo()); //16 </p>
 ```
 
-
 <h2>2. Sulkeumaan suljetuttujen vapaiden muuttujien määritellyt funktio päättyy, mutta sulkeuma säilyy</h2>
-
 
 ```
 <p>function kerro(nimi) {</p>
@@ -203,16 +197,14 @@ return typeof value==='boolean';} </p>
 # Oliot ja niiden käyttäytyminen</h2>
 ## Olion luominen</h3>
 <p>Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsitää myös avain- arvopareina, joita käytetään Hashmappien tavoin.</p
+	
 <p><b>Yksinkertainen aaltosuluilla luotu olio:</b><p/>
-
 
 ```
 let noora = {nimi: "Noora", ika: 35};
 
 ```
-
 <p>tai määritellään ominaisuudet jälkeenpäin:</p>
-
 ```
 let virva = {};
 virva.nimi = "Virva";
@@ -220,14 +212,13 @@ virva.ika = 18;
 
 ```
 <p><b>Object Olion avulla:</b></p>
-
 ```
 let noora = new Object();
 noora.nimi = "Noora";
 noora.ika = 35;
 ```
-<p>Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia. Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla. </p>
-<div>
+Se millä tavalla oliota lähdetään luomaan, riippu aina käyttötarkoituksesta. Yllä esitetyt tavat ovat nopeita ja nidien avulla voi luoda yksittäisiä ns kertakäyttöoliota joilla ei ole yhteisiä ominaisuuksia. Jos kuitenkin tarvitaan useampia samantyyppisiä oliota on se kätevää tehdä konstruktorifunktion avulla. 
+
 
 <p><b>Konstruktorifunktio</b><p/>
   
@@ -245,36 +236,30 @@ console.log(tokahenkilo.nimi) //Virva
 
 <p>Konstruktorifunktion prototyyppiolioon voidaan liittää ominaisuuksia, jotka kaikki kyseisellä funktiolla konstruoidut oliot jakavat keskenään.Jos konstruktorin avulla olioita tehtaillessa olioilla on samoja funktioita, olisikin parempi ohjelmointityyli liittää yhteiset ominaisuudet prototyyppiolioon kaikkien perittäväksi, jotta vältytään koodin toisteisuudelta. </p>
 
-<div class = "highlight">
-<p>Henkilo.prototype.tuplaaIka = function() {return this.ika * 2} console.log(noora.tuplaaIka()); //70</p>
-</div>
+```
+<p>Henkilo.prototype.tuplaaIka = function() {return this.ika * 2} 
+console.log(noora.tuplaaIka()); //70</p>
 
+```
 <p><b>tai vielä Object.create-funktion avulla:</b></p>
-
-<div class = "highlight">
-
-<p>var Henkilo = {
+```
+var Henkilo = {
   nimi : "",
   ika : "",
   }
-  
-  var noora = Object.create(Henkilo);
+ 
+ noora = Object.create(Henkilo);
   noora.nimi = "Noora";
-  noora.ika = 35;</p>
-</div>
+  noora.ika = 35;
+```
 
 <p>Object.create tavan etuna on, että functiolle annettava prototyyppi voidaan valita vapaasti. Eri tyyppisiä olioita voidaan luoda dynaamisesti samassa functiossa sillä parametrina voi antaa minkä tahansa tyyppisen olion.</p>
-
-
-
-
 
 <p><b>Olioden luonti JavaScriptin "luokka" eli class-määrittelyn avulla.</b></p>
 <p>ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia. Luokkiin ei myöskään voida (toistaiseksi?) ohjelmoida tietokenttiä.</p>
 
-<div class = "highlight">
-
-<p>var Henkilo = {
+```
+var Henkilo = {
    class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
  this.nimi=Tytti;
@@ -285,15 +270,14 @@ ika(){
 this.yernow - this.syntymavuosi}
 } 
 } //18
-</p>
-</div>
 
+```
 <h3>Olion metodit</h3>
 
 <p>Javasta poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().</p>
 
-<div class = "highlight">
-<p>var Henkilo = {
+```
+var Henkilo = {
    class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
  this.nimi=Tytti;
@@ -304,14 +288,13 @@ ika(){
 this.yernow - this.syntymavuosi}
 }
 } //18
-</p>
-</div>
 
+```
 <h3>Olioden dynaamisuudesta:</h3>
-<p>
+
 Javascritissa olion kentät ovat julkisia eli niihin voidaan dynaamisesti lisätä ja niistä voidaan poistaa kenttiä ja muuttaa arvoja olion luonnin jälkeen. 
 Tämän piirteen kanssa tulee olla huolellinen, ettei tule uutta arvoa sijoittaessa vahingossa lisänneeksi ylimääräistä kenttää(jos esim. vahingossa kirjoittaa kentän nimen väärin). Huom! Oleellinen ero arvoa sijoittaessa ja haetaessa on siis se, että  jos sijoittaessa  kenttää ei ole, se lisätään, huolimatta siitä löytyykö sitä "ylemmästä oliosta". Haettaessa puolestaan  kuljetaan prototyyppiketjua 
-pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.</p>
+pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löydy palautetaan undefined.
 
 <p><b>Olion kenttiin viittaaminen ja läpikäynti</b></p>
 <p>Olion kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku eli  kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi. Olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.</p>
@@ -346,7 +329,6 @@ var sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};
 write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
 
 ```
-
 <p><b>Olion poisto</b></p>
 <p>Ainut hyvä tapa olion ominaisuuden poistoon on käyttää delete-operaattoria. Ominaisuuden asettaminen joko arvoon undefined tai null poistaa vain siihen liittyneen arvon muttei itse avainta, kuten seuraavasta esimerkistä käy ilmi.</p>
 <div class = "highlight">
@@ -376,6 +358,18 @@ for(var i in olio) {
 
 # tehtävä3
 # Oliot, protoryypit ja periytyminen
+
+
+
+
+
+
+
+
+
+
+
+# tehtävä4
 
 
 
