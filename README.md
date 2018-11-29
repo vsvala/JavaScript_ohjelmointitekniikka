@@ -440,7 +440,7 @@ sirkku.reviiri; // "puisto"
  ```
 Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä kaikkien ylempien olioden ominaisuudet ja funktiot. Arvoa sijoitettaessa ei edetä pitkin prototyyppiketjua. Vain arvoa kysyttäessä etsitään tarvittaessa ketjusta.
 
-<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
+<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JS3jpg%20(1).jpg" >
 
 
 ## perintä Object.createn avulla 
