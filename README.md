@@ -405,8 +405,8 @@ Pidempiä perimisketjuja voidaan rakentaa korvaamalla olion prototyyppiolioita u
 function Elain() {
   this.reviiri = "puisto"
   this.paino = 0;
-  this.syo = function() {this.paino+10} {
 }
+Elain.prototype.syo = function () {this.paino+10}
 
 function Lintu() {
   this.siipienVari = "";
