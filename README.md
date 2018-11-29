@@ -407,7 +407,8 @@ function Elain() {
   this.reviiri = "puisto"
   this.paino = 0;
 }
-Elain.prototype.syo = function () {this.paino+10}
+Elain.prototype.asetaPaino =function (maara) {this.paino=maara}
+Elain.prototype.syo = function (maara) {this.paino+=maara}
 
 function Lintu() {
   this.siipienVari = "";
@@ -429,12 +430,11 @@ sirkku.nimi;          // Sirkku"
 sirkku.lauluAani;     //"titityy"
 sirkku.siipienVari;   // ""
 sirkku.siipienVari = "musta";  //"musta"   
-sirkku.paino;  // 0
+sirkku.asetaPaino(10);  // 0
 
-sirkku.syo();  
-sirkku.syo();
-sirkku.syo();               
-sirkku.paino;  // 30
+sirkku.syo(5);  
+sirkku.syo(5);              
+sirkku.paino;  // 20
 sirkku.reviiri; // "puisto"
  
  ```
