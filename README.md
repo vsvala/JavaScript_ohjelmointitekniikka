@@ -440,12 +440,7 @@ sirkku.reviiri; // "puisto"
  ```
 Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Peippo perii itselleen käyttöönsä kaikkien ylempien olioden ominaisuudet ja funktiot. Arvoa sijoitettaessa ei edetä pitkin prototyyppiketjua. Vain arvoa kysyttäessä etsitään tarvittaessa ketjusta.
 
-<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JS3jpg%20(1).jpg" >
-
-
-## perintä Object.createn avulla 
-JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käytön suhteen kannattaakin olla varovainen.
-
+<img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JS3ejpg%20(1).jpg">
 
 Syntynyt ketsu siis  alhaalta lähdettäsessä:
 
@@ -454,6 +449,15 @@ Peippo.prototype. -proto_ --> Lintu.prototype
 Lintu.prototype._proto_ --> Elain.prototype
 Elain.prototype._proto_ --> Object.prototype
 Object.prototype.-proto_ -->null
+
+## perintä Object.createn avulla 
+JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käyttöä emme välttämättä suosittele tai ainakin kannattaa olla sen käytön suhteen varovainen.
+
+
+
+
+
+
 
 
 # tehtävä4
