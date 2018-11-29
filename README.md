@@ -400,6 +400,7 @@ console.log(noora.asuinmaa); //Suomi
 ```
 
 Pidempiä perimisketjuja voidaan rakentaa korvaamalla olion prototyyppiolioita uudella oliolla seuraavasti. 
+Funktioiden prototyyppiolioihin voidaan liittää kenttien lisäksi myös aksessorimetodeita, kuten esimerkissä Eläinmelle on lisätty syö aksessorimetodi. Kun peritty aksessori asettaa arvon perittyyn kenttään niin this viittaa silloin perineeseen olioon. Jos arvoa asettaessa perinyt olio ei sisällä perittyä kenttää se luodaan, haettaessa puolestaan etsittäisiin ketjusta.
 
 ```
 function Elain() {
