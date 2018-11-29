@@ -442,11 +442,18 @@ Tällöin muodostuu alla olevan mukainen perintäketju, missä alimpana luotu Pe
 
 <img src="https://github.com/vsvala/JavaScript_ohjelmointitekniikka/blob/master/JSel%C3%A4in%20(1).png" >
 
-ta.
+
 ## perintä Object.createn avulla 
 JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käytön suhteen kannattaakin olla varovainen.
 
 
+Syntynyt ketsu siis  alhaalta lähdettäsessä:
+
+sirkun _proto_ --> Peippo.prototype
+Peippo.prototype. -proto_ --> Lintu.prototype
+Lintu.prototype._proto_ --> Elain.prototype
+Elain.prototype._proto_ --> Object.prototype
+Object.prototype.-proto_ -->null
 
 
 # tehtävä4
