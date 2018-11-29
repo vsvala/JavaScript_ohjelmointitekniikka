@@ -418,7 +418,7 @@ Lintu.prototype = new Elain()
 
 function Peippo(nimi) {
   this.nimi = nimi;
-
+}
 Peippo.prototype = new Lintu()
 
 
