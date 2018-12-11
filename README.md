@@ -3,7 +3,7 @@
 
 
 
-1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](###1)
+1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
 2. [Tyyppiturvallisuuden tavoittelua](#2)
 3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#3)
 4. [Sulkeumat ja sen käyttötavat](#4)
@@ -11,7 +11,7 @@
 6. [Protoryypit ja periytyminen](#6)
 7. [Suunnittelumalleja](#7)
 
-### 1 
+# 1 
 # Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
 
 JavaScript ohjelmointitekniikan kurssin tehtävänä oli laatija yhtenäinen ohjeisto hyvään JavaScript-ohjelmointiin. Alla olevasta koostamastamme dokumentista löytyy keräämiämme kielen keskeisiä piirteitä ja käsitteiden selvenyksiä sekä suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi.
