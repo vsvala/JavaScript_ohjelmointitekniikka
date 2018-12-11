@@ -81,6 +81,23 @@ Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascri
 <p><pNumber.isNaN(3);             //false</p>
 
 ```
+
+JavaScriptin valmis typeOf funktio toimii tarkastuksissa tiettyyn pisteesee, se ei ole kaikissa tapauksissa riittävä.
+Alla määritelty muuttuja a on Number olio ja se käyttäytyy oikein laskutoimituksissa, mutta sen tyyppi ei ole numero. Jotta tämä saadaan määriteltyä oikein täytyy viitata hierarkiassa ylöspäin Object function prototyyppi olion toString:iin. Tällöin niin Number-olio kuin numero yksikin tunnistetaan numeroiksi, kun taas merkkijono ”1” saa tyypikseen String:
+
+```
+var a = new Number(4)
+write(typeof a == 'number')                                           // false
+write(typeof 2 == 'number')                                           // true
+write(typeof "2" == 'number')                                         // false
+write(a + 1)                                                          // 4
+write(a % 1)                                                          // 0
+write(1 + "1")                                                        // 11
+write(Object.prototype.toString.call(a) == '[object Number]')         // true
+write(Object.prototype.toString.call(1) == '[object Number]')         // true
+write(Object.prototype.toString.call("1") == '[object Number]')       // false
+```
+
 <p>Liukuluvun tarkastukseen toimii seuraava tarkastusfunktio, joka tarkastaa ettei luvun desimaaliosa ole nolla:</p>
 
 ```
