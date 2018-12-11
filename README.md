@@ -17,7 +17,8 @@
 JavaScript ohjelmointitekniikan kurssin tehtävänä oli laatija yhtenäinen ohjeisto hyvään JavaScript-ohjelmointiin. Alla olevasta koostamastamme dokumentista löytyy keräämiämme kielen keskeisiä piirteitä ja käsitteiden selvenyksiä sekä suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi.
 
 
-# 2 Tyyppiturvallisuuden tavoittelua	
+# 2 
+# Tyyppiturvallisuuden tavoittelua	
 
 JavaScript on dynaamisesti tyypitetty:muuttujilla, muodollisilla parametreilla ja funktioilla ei ole tyyppiä, mutta arvoilla on. Dynaamisessa tyypistyksessä tyyppi voi muuttua ajon aikana, kun taas staattisessa tyypit ovat tiedossa jo käännösvaiheessa. Dynaaminen tyypitys luo kieleen joustavuutta, muttei kuitenkaan välttämättä aina ole staattista tyypitystä parempi ratkaisu. Staattisen tyyppijärjestelmän avulla useat virheet havaitaan jo käännösaikana, kun taas dynaamisesti tyypitetyssä kielessä vasta ajon aikana, mikä ainakin aloittelevan JavaScript koodaajan kannalta ei ole niin mukavaa.
     
