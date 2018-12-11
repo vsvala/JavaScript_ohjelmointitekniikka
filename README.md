@@ -4,7 +4,7 @@ Virva Svala ja Noora Virolainen
 
 
 
-1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](# Suosituksia)
+1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#Suosituksia)
 2. [Tyyppiturvallisuuden tavoittelua](#Tyyppiturvallisuudentavoittelua)
 3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#sulkeuma,)
 2. [Sulkeuma](#tehtävä2)
