@@ -6,9 +6,9 @@
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
 2. [Tyyppiturvallisuuden tavoittelua](#2)
 3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#3)
-4. [Sulkeuma](#4)
+4. [Sulkeumat ja niiden käyttötavat](#4)
 5. [Oliot ja niiden käyttäytyminen](#5)
-6. [Oliot, protoryypit ja periytyminen](#6)
+6. [Protoryypit ja periytyminen](#6)
 
 # 1 
 # Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
