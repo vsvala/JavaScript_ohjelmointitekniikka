@@ -4,14 +4,14 @@ Virva Svala ja Noora Virolainen
 
 
 
-1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1.Suosituksia)
+1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi1 )
 2. [Tyyppiturvallisuuden tavoittelua](#Tyyppiturvallisuudentavoittelua)
 3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#sulkeuma,)
 2. [Sulkeuma](#tehtävä2)
 3. [Olio](#tehtävä3)
 3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
 
-# 1.Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
+# Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi1 
 
 JavaScript ohjelmointitekniikan kurssin tehtävänä oli laatija yhtenäinen ohjeisto hyvään JavaScript-ohjelmointiin. Alla olevasta koostamastamme dokumentista löytyy keräämiämme kielen keskeisiä piirteitä ja käsitteiden selvenyksiä sekä suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi.
 
