@@ -1,7 +1,10 @@
 # JavaScript_ohjelmointitekniikka: harjoitukset 2018
 Virva Svala ja Noora Virolainen
 
-1. Tyyppiturvallsuuden tavoittelua	
+
+
+
+1. [Tyyppiturvallsuuden tavoittelua](#tehtävä1)	
 2. [Sulkeuma, Olio](#tehtävä2)
 3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
 4. [tehtävät](#tehtävä4)
