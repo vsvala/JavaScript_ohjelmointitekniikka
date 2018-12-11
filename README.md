@@ -4,7 +4,7 @@
 
 
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
-2. [Tyyppiturvallisuuden tavoittelua](#2)
+2. [Tyyppiturvallisuuden tavoittelua](#Tyyppiturvallisuuden tavoittelua)
 3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#3)
 4. [Sulkeumat ja sen käyttötavat](#4)
 5. [Oliot ja niiden käyttäytyminen](#5)
