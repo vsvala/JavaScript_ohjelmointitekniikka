@@ -4,12 +4,16 @@ Virva Svala ja Noora Virolainen
 
 
 
-1. [Tyyppiturvallsuuden tavoittelua](#tehtävä1)	
-2. [Sulkeuma, Olio](#tehtävä2)
+1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#tehtävä1)
+2. [Tyyppiturvallisuuden tavoittelua](#tehtävä2)
+3. [Funktionaalinen vai Imperatiivinen ohjelmonti]((#
+2. [Sulkeuma](#tehtävä2)
+3. [Olio](#tehtävä3)
 3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
-4. [tehtävät](#tehtävä4)
 
-# 1. Tyyppiturvallsuuden tavoittelua	
+# 1. Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
+
+# 2. Tyyppiturvallisuuden tavoittelua	
 
 JavaScript on dynaamisesti tyypitetty:muuttujilla, muodollisilla parametreilla ja funktioilla ei ole tyyppiä, mutta arvoilla on. Dynaamisessa tyypistyksessä tyyppi voi muuttua ajon aikana, kun taas staattisessa tyypit ovat tiedossa jo käännösvaiheessa. Dynaaminen tyypitys luo kieleen joustavuutta, muttei kuitenkaan välttämättä aina ole staattista tyypitystä parempi ratkaisu. Staattisen tyyppijärjestelmän avulla useat virheet havaitaan jo käännösaikana, kun taas dynaamisesti tyypitetyssä kielessä vasta ajon aikana, mikä ainakin aloittelevan JavaScript koodaajan kannalta ei ole niin mukavaa.
     
