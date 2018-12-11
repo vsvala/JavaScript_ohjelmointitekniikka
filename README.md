@@ -1,15 +1,14 @@
-# JavaScript_ohjelmointitekniikka: harjoitukset 2018
-Virva Svala ja Noora Virolainen
-
+# JavaScript_ohjelmointitekniikka: hajoitustyö 2018
+  Virva Svala ja Noora Virolainen
 
 
 
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
 2. [Tyyppiturvallisuuden tavoittelua](#2)
-3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#4)
-2. [Sulkeuma](#tehtävä2)
-3. [Olio](#tehtävä3)
-3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
+3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#3)
+4. [Sulkeuma](#4)
+5. [Oliot ja niiden käyttäytyminen](#5)
+6. [Oliot, protoryypit ja periytyminen](#6)
 
 # 1 
 # Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
@@ -161,7 +160,7 @@ return typeof value==='boolean';} </p>
 ## Näkyvyysalue 
 <p>Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikalliset(local) ja globaalit(global). Näkyvyysalue määrittelee, missä ja milloin muuttuja on olemasssa ja sen arvo on saatavilla. Totutusta Java kielen lohkoajattelusta poiketen Javascript kielssä funktio muodostaa oman näkyvyysalueensa(scope). Tällöin funktion muodolliset parametrit, paikalliset muuttujat ja paikalliset funktiot näkyvät ja ovat käytettävissä vain ko.funktion sisällä. Funktion näkyvyyaluetta kutsutaan toisinaan myös viittausympäristöksi tai nimiavaruudeksi. JavaScript kieli ei ole Javan tavoin "litteä", sillä funktiot voivat myös muodostaa useita sisäkkäisiä näkyyysalueita/miniavaruuksia. Perusideana JavaScriptin sisäkkäisillä näkyvyysalueilla on se, että "sisältä näkee ulos, mutta ulkoa ei näe sisään". Sulkeuma poikkeaa näkyvyysalueen normaalista määrittelystä, sillä siinä funktio suoritetaan oman näkvyysalueen sijasta sulkeuman määrittelyn funktion näkyvyysalueessa.</p>
 
-<h3>Sulkeuma</h3>
+## Sulkeuma
 
 <p>JavaScriptissä funktio voi saada parametrikseen toisen funktion. Tällöin sulkeumassa funktion parametrin mukana voidaan välittää myös sen muuttujia. Jos funktion sisällä luodaan sisempi funktio, sen näkyvyysalueeseen kuuluvat myös ulomman funktion muuttujat. Eli esimerkiksi  kun parametrin saanut funktio suorittaa parametrina saamansa funktion, suoritetaan se parametrina annetun funktion näkyvyysalueessa.
 
@@ -207,8 +206,10 @@ return typeof value==='boolean';} </p>
 <p>Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt </p>
 
 
-# Oliot ja niiden käyttäytyminen</h2>
-## Olion luominen</h3>
+# 4
+# Oliot ja niiden käyttäytyminen 
+
+## Olion luominen
 <p>Olion voidaan ajatella olevan jonkin asian yleinen käsite tai esimerkiksi kokoelma tietoja. OLio sisältää ominaisuuksia eli atribuutteja jotka tallennetaan muuttujiin sekä metodeja, joilla käsitellään olion sisältämää tietoa. Olioiden voidaan ajatella olevan functioiden ilmentymiä jotka luodaan sanalla -New- . Olit voi käsitää myös avain- arvopareina, joita käytetään Hashmappien tavoin.</p
 	
 <p><b>Yksinkertainen aaltosuluilla luotu olio:</b><p/>
@@ -372,7 +373,7 @@ for(var i in olio) {
 
 <p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
 
-# tehtävä3
+# 5
 # Oliot, protoryypit ja periytyminen
 
 Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion, prototyyppi ja prototyyppiolio-olio ovat sama asia.
