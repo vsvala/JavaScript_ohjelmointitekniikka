@@ -491,23 +491,32 @@ JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Obje
 JavaScript-ohjelmalle on tyypillistä suoritusaikainen dynaamisuus eli se että läshes kaikkea voi vauhdissa muuttaa. Tämän seurauksena kielelle on mahdollista kehittää ja onkin kehitetty hyvin erilaisia ohjelmointityylejä ja -tapoja. Verkosta löytyykin paljon erilaisia eri "gurujen" kehittelemiä JavaScript-ohjelmoinnin rakennehahmoja eli suunnittelumalleja ("design pattern") esimerkiksi Ben Cherryn [JavaScript Module Pattern: In-Depth](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html) ja [Addy Osmanin](Learning JavaScript Design Patterns). Alla luennoilla esitelty hivenen muokattu esimerkki Addy Omanin suunnittelumallista Module pattern.
 
 ```
-Toteutetaan yksi nollattava laskuri (tätä ei voi monistaa):
-var laskuri = (function () {
-
-  var counter = 0;  // sulkeuman yksityinen muuttuja
-
-  // funktio palauttaa arvonaan olion, jossa on kaksi aksessoria,
-  // jotka käsittelevät sulkeumaan suljettua vapaata muuttujaa:
-
+var testModule = (function () {
+ 
+  var counter = 0;
+ 
   return {
+ 
     incrementCounter: function () {
       return counter++;
     },
+ 
     resetCounter: function () {
-      write( "Laskurin arvo ennen nollausta: " + counter );
+      console.log( "counter value prior to reset: " + counter );
       counter = 0;
     }
   };
+ 
+})();
+ 
+// Käyttö:
+ 
+// Increment our counter
+testModule.incrementCounter();
+ 
+// Check the counter value and reset
+// Outputs: counter value prior to reset: 1
+testModule.resetCounter();
 
 
 ```
