@@ -5,8 +5,8 @@ Virva Svala ja Noora Virolainen
 
 
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
-2. [Tyyppiturvallisuuden tavoittelua](#Tyyppiturvallisuudentavoittelua)
-3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#sulkeuma,)
+2. [Tyyppiturvallisuuden tavoittelua](#2)
+3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#4)
 2. [Sulkeuma](#tehtävä2)
 3. [Olio](#tehtävä3)
 3. [Oliot, protoryypit ja periytyminen](#tehtävä3)
@@ -16,7 +16,8 @@ Virva Svala ja Noora Virolainen
 
 JavaScript ohjelmointitekniikan kurssin tehtävänä oli laatija yhtenäinen ohjeisto hyvään JavaScript-ohjelmointiin. Alla olevasta koostamastamme dokumentista löytyy keräämiämme kielen keskeisiä piirteitä ja käsitteiden selvenyksiä sekä suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi.
 
-# 2. Tyyppiturvallisuuden tavoittelua	
+# 2
+# Tyyppiturvallisuuden tavoittelua	
 
 JavaScript on dynaamisesti tyypitetty:muuttujilla, muodollisilla parametreilla ja funktioilla ei ole tyyppiä, mutta arvoilla on. Dynaamisessa tyypistyksessä tyyppi voi muuttua ajon aikana, kun taas staattisessa tyypit ovat tiedossa jo käännösvaiheessa. Dynaaminen tyypitys luo kieleen joustavuutta, muttei kuitenkaan välttämättä aina ole staattista tyypitystä parempi ratkaisu. Staattisen tyyppijärjestelmän avulla useat virheet havaitaan jo käännösaikana, kun taas dynaamisesti tyypitetyssä kielessä vasta ajon aikana, mikä ainakin aloittelevan JavaScript koodaajan kannalta ei ole niin mukavaa.
     
@@ -121,11 +122,13 @@ return typeof value==='boolean';} </p>
 <p>isArray([2,1]) //true </p>
 ```
 
+# 3
 # Funktionaalinen vai imperatiivinen ohjelmointi
-### Imperatiivinen ohjelmointi</h3>
+
+## Imperatiivinen ohjelmointi
 <p>Imperatiivisessa ohjelmoinnissa ongelmanratkaisu kuvataan vaihevaiheelta etenevin komennoin järjestyksessä. Komennot muuttavat suorituksen tilaa ja muuttavat muuttujien arvoja. Tyypillistä imoeratiiviselle ohjelmointityylille on muokattavat tietorakenteet, sekä ehtolausekkeet, toistolauseet sekä poikkeukset. Imperatiiviselle olioohjelmoinnille tyypillisesti asioita kuvataan olioina ja toimintoja olioihin liittyvinä metodeina. Java kieleen alkuun tottuneelle imperatiivinen ohejlointikieli voi tuntua helppolukuismmalta.</p>
 
-<h3>Funktionaalinen ohjelmointi</h3>
+## Funktionaalinen ohjelmointi
 <p>Funktionaalinen ohjelmointiparadigma perustuu matemaattisten funktioiden käyttöön, tarkemmin lambdakalkyyliin. Olennaista funktionaaliselle ohjelmointiyylille on, että ohjelmissa ei ole tilaa. Funktiot laaditaan niin, että ne eivät muutaolemassa olevia muuttujia. Funktionaalisesssa ohjelmoinnissa ei käytetä sijoituslauseita tai silmukoita, eikä muuttujien arvoja ei vaihdeta kun ne on kerran asetettu. Tämän vuoksi funktionaalinen tyylis soveltuukin hyvin matemaattisiin tarkoituksiin. Suuria arvoja käsitellään usein rekursion avulla. Funktiolla ei ole sivuvaikutuksia, joten sen arvot pysyvät samoina aina samoilla parametreilla. Funktionaalisen ohjelmointityylin yksi etu onkin siinä, että funktiot ovat luotettavia. Ne tekevät aina täsmälleen samoin ja aina täysin loogisesti.  Ne voi myös helpommin  pilkkoa pienimpiin osasiinsa, jossa ne on helppo testata kun ei tarvitse huomioida tilamuutoksia.  Myös rinnakkaisuuden toteutus on helpompaa. Funktionaalisen ohjelmoinnin tllattomuus voi kuitenkin myös aiheuttaa päänvaivaa esimerkiksi websovellukissa, joissa komponentti tarvitsisi tilaa. Tällaisessa tilanteessa voikin olla järkevämpää turvautua hyödyntämään luokkasyntakseja.</p>
 <p>Funktionaalisen ohjelmoinnin yhtenä etuna voidaan nähdä sen matemaattisuuden jolloin ohjelmien oikeiksi todistaminen  on helppompaa. Myös koska sivuvaikutuksia ei ole, on funktioiden suoritusjärjestys vapaata ja kääntäjä voi optimoida samanlaisia funktiokutsuja yhdeksi. Funktioiden käsittelylle on myös parmmat tuet ja  JavaScriptissä  voidaankin käyttää nk. Korkeamman asteen funktioita: funktioita voidaankin käyttää parametreina ja funktiot voivat kutsua ja palauttaa funktioita.  Funktionaalista tyyliä käytettäessä ohjelmointikieli on monesti yksinkertaisempaa suunnitella ja toteuttaa ja koodin määrä usein lyhenee. </p>
 <p>Seuraavassa esimekki  JavaScriptin yksinkertaisemman korkeamman asteen taulukonkäsittely MAP funktion käytöstä verrattuna saman asian tekevään toistolausekkeella toetutettuun metodiin, joka on huomattavasti pidempi.</p>
@@ -152,11 +155,10 @@ return typeof value==='boolean';} </p>
 
 
 
-# tehtävä2
-# sulkeuma, Oliot 
+# 4
+# Sulkeumat ja sen käyttötavat
 
-## Sulkeuma ja sen käyttötavat
-<h3>Näkyvyysalue</h3>
+## Näkyvyysalue 
 <p>Näkyvyysalueen(scope) perusteella meillä on kahdenlaisia muuttujia: paikalliset(local) ja globaalit(global). Näkyvyysalue määrittelee, missä ja milloin muuttuja on olemasssa ja sen arvo on saatavilla. Totutusta Java kielen lohkoajattelusta poiketen Javascript kielssä funktio muodostaa oman näkyvyysalueensa(scope). Tällöin funktion muodolliset parametrit, paikalliset muuttujat ja paikalliset funktiot näkyvät ja ovat käytettävissä vain ko.funktion sisällä. Funktion näkyvyyaluetta kutsutaan toisinaan myös viittausympäristöksi tai nimiavaruudeksi. JavaScript kieli ei ole Javan tavoin "litteä", sillä funktiot voivat myös muodostaa useita sisäkkäisiä näkyyysalueita/miniavaruuksia. Perusideana JavaScriptin sisäkkäisillä näkyvyysalueilla on se, että "sisältä näkee ulos, mutta ulkoa ei näe sisään". Sulkeuma poikkeaa näkyvyysalueen normaalista määrittelystä, sillä siinä funktio suoritetaan oman näkvyysalueen sijasta sulkeuman määrittelyn funktion näkyvyysalueessa.</p>
 
 <h3>Sulkeuma</h3>
