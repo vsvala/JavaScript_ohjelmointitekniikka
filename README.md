@@ -6,9 +6,10 @@
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
 2. [Tyyppiturvallisuuden tavoittelua](#2)
 3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#3)
-4. [Sulkeumat ja niiden käyttötavat](#4)
+4. [Sulkeumat ja sen käyttötavat](#4)
 5. [Oliot ja niiden käyttäytyminen](#5)
 6. [Protoryypit ja periytyminen](#6)
+7. [Suunnittelumalleja](#7)
 
 # 1 
 # Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
@@ -206,7 +207,7 @@ return typeof value==='boolean';} </p>
 <p>Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt </p>
 
 
-# 4
+# 5
 # Oliot ja niiden käyttäytyminen 
 
 ## Olion luominen
@@ -373,7 +374,7 @@ for(var i in olio) {
 
 <p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
 
-# 5
+# 6
 # Protoryypit ja periytyminen
 
 Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion, prototyyppi ja prototyyppiolio-olio ovat sama asia.
@@ -467,17 +468,12 @@ Object.prototype.-proto_ -->null
 JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käyttöä emme välttämättä suosittele tai ainakin kannattaa olla sen käytön suhteen varovainen.
 
 
+# 7
+# Suunnittelumalleja
 
 
 
-
-
-
-# tehtävä4
-
-
-
-Lähteet:
+## Lähteet:
 
   <li>https://github.com/zHarrowed/Javascript-ohjelmointitekniikka/wiki/Viikko-2</li>
   <li>https://fi.wikipedia.org/wiki/Tyyppijärjestelmä</li>
