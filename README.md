@@ -488,7 +488,7 @@ JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Obje
 # 7
 # Suunnittelumalleja
 
-JavaScript-ohjelmalle on tyypillistä suoritusaikainen dynaamisuus eli se että läshes kaikkea voi vauhdissa muuttaa. Tämän seurauksena kielelle on mahdollista kehittää ja onkin kehitetty hyvin erilaisia ohjelmointityylejä ja -tapoja. Verkosta löytyykin paljon erilaisia eri "gurujen" kehittelemiä JavaScript-ohjelmoinnin rakennehahmoja eli suunnittelumalleja ("design pattern") esimerkiksi Ben Cherryn [JavaScript Module Pattern: In-Depth](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html) ja [Addy Osmanin](Learning JavaScript Design Patterns). Alla luennoilla viitattu esimerkki Addy Omanin suunnittelumallista Module pattern.
+JavaScript-ohjelmalle on tyypillistä suoritusaikainen dynaamisuus eli se että läshes kaikkea voi vauhdissa muuttaa. Tämän seurauksena kielelle on mahdollista kehittää ja onkin kehitetty hyvin erilaisia ohjelmointityylejä ja -tapoja. Verkosta löytyykin paljon erilaisia eri "gurujen" kehittelemiä JavaScript-ohjelmoinnin rakennehahmoja eli suunnittelumalleja ("design pattern") esimerkiksi Ben Cherryn [JavaScript Module Pattern: In-Depth](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html) ja [Addy Osmanin](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript). Alla luennoilla viitattu esimerkki Addy Omanin suunnittelumallista Module pattern.
 
 ```
 var testModule = (function () {
