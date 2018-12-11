@@ -488,7 +488,7 @@ JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Obje
 # 7
 # Suunnittelumalleja
 
-JavaScript-ohjelmalle on tyypillistä suoritusaikainen dynaamisuudesta eli se että läshes kaikkea voi vauhdissa muuttaa. Tämän seurauksena kielelle on mahdollista kehittää ja onkin kehitetty hyvin erilaisia ohjelmointityylejä ja -tapoja. Verkosta löytyykin paljon erilaisia eri "gurujen" kehittelemiä JavaScript-ohjelmoinnin rakennehahmoja eli suunnittelumalleja ("design pattern").
+JavaScript-ohjelmalle on tyypillistä suoritusaikainen dynaamisuudesta eli se että läshes kaikkea voi vauhdissa muuttaa. Tämän seurauksena kielelle on mahdollista kehittää ja onkin kehitetty hyvin erilaisia ohjelmointityylejä ja -tapoja. Verkosta löytyykin paljon erilaisia eri "gurujen" kehittelemiä JavaScript-ohjelmoinnin rakennehahmoja eli suunnittelumalleja ("design pattern") Esimerkiksi  
 
 
 ## Lähteet:
