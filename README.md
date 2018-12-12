@@ -5,7 +5,7 @@
 
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
 2. [Tyyppiturvallisuuden tavoittelua](#2)
-3. [Muuttujan määrittely var vs. let sekä yhdenmukaisuuden vertailusta](#3)
+3. [Muuttujan määrittely var vs. let sekä yhtäsuuruus vertailusta](#3)
 4. [Funktionaalinen vai Imperatiivinen ohjelmonti](#4)
 5. [Sulkeumat ja sen käyttötavat](#5)
 6. [Oliot ja niiden käyttäytyminen](#6)
@@ -142,7 +142,7 @@ return typeof value==='boolean';} </p>
 ```
 
 # 3
-# Muuttujan määrittely var vs. let sekä yhdenmukaisuuden vertailusta
+# Muuttujan määrittely var vs. let sekä yhäsuuruus vertailusta
 
 JavaScriprissä muuttujan määrittelyssä var ja let sanalla sekä yhdenvertaisuuden tutkimisessa on muutamia huomionarvoisia seikkoja.Funktiossa ja kaikissa sen sisältämissä lohkoissa, var-määritellyt muuttujat liittyvät itse funktio-olioon, eli niistä ei tule lohkojen paikallisia muuttujia. Let sana taas toimii lohkoissa paikallisen muuttujan tavoin.
 
