@@ -144,6 +144,8 @@ return typeof value==='boolean';} </p>
 # 3
 # Muuttujan määrittely var vs. let sekä yhäsuuruus vertailusta
 
+## var vs. let
+
 JavaScriprissä muuttujan määrittelyssä var ja let sanalla sekä yhdenvertaisuuden tutkimisessa on muutamia huomionarvoisia seikkoja.Funktiossa ja kaikissa sen sisältämissä lohkoissa, var-määritellyt muuttujat liittyvät itse funktio-olioon, eli niistä ei tule lohkojen paikallisia muuttujia. Let sana taas toimii lohkoissa paikallisen muuttujan tavoin.
 
 Alla esimerkkissä määritellään sekä var että let -avainsanalla muuttuja ja alilohko, jonne määritellään samanniminen funktio. 
@@ -176,6 +178,17 @@ TulosLet:10
 Let-avainsanan käyttö on siis aidosti paikallinen ja esimerkissä tulos- muuttujan arvo ei muutu funktion sisällä olevassa lohkossa. Var- määrittelyn tapauksessa näkyyysalue on funktiokohtainen, jolloin muuttujan arvo muuttuu myös funktion sisällä olevassa lohkossa ja taas uusi määrittely lohkon sisällä ei vaikuta funktiossa määriteltyyn tulos-muuttujaan ollenkaan.
 
 Jotta säästytään  var -sanan aiheuttamilta yllätyksiltä, olisikin viisasta ja hyvän ohjelmointityylin mukaista määritellä muuttujat aina let-määreellä. Se helppottaa ongelmien löytämistä ja paikallistamista koodissa.
+
+## yhtäsuuruus
+##ALA PÄTKÄ SUORAAAA LAINAUSTAA MUOKKKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+""Yhtäsuuruuden ja erisuuruisuuden tutkimiseen JavaScriptissä on kolme samuuden versiota: abstrakti (== ja !=), tiukka (=== ja !==) ja erityiskäyttöön tarkoitettu Object.is-metodi.
+Abstraktit samuusvertailut == ja != tekevät tarvittaessa tyyppimuunnoksia samuuden tutkimisessa. Esimerkiksi seuraavat lausekkeet ovat arvoltaan true: 
+123=="123", new String("abc")=="abc", false==0, ""==false, ""==0, null==undefined, []==0
+Tiukat samuusvertailut === ja !== eivät tee tyyppimuunnoksia ennen samuuden tutkimista. Edellisen luettelon abstraktista vertailusta poiketen lausekkeet ovat arvoltaan false: 
+123==="123", new String("abc")==="abc", false===0, ""===false, ""===0, null===undefined, []===0
+Samuusvertailu Object.is poikkeaa tiukasta siten, että seuraavat kaksi ovat arvoltaan true päivastoin kuin tiukassa: 
+Object.is(NaN,NaN), !Object.is(+0,-0). Tästä ei sen enempää."""
+
 
 # 4
 # Funktionaalinen vai imperatiivinen ohjelmointi
