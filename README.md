@@ -191,7 +191,9 @@ Object.is(NaN,NaN), !Object.is(+0,-0). Tästä ei sen enempää."""
 ////////////////////////
 
  Java Scritissä Vertailuoperaattorit == ja === toimivat eritavoin
+ 
 == tarkastaa, voiko arvot tyyppikonversioiden kautta tulkita samoiksi
+
 === tarkastaa aidon yhtäsuuruuden
 
 Tässä kohtaa vois olla esimerkki
