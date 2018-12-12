@@ -5,11 +5,12 @@
 
 1. [Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi](#1)
 2. [Tyyppiturvallisuuden tavoittelua](#2)
-3. [Funktionaalinen vai Imperatiivinen ohjelmonti](#3)
-4. [Sulkeumat ja sen käyttötavat](#4)
-5. [Oliot ja niiden käyttäytyminen](#5)
-6. [Protoryypit ja periytyminen](#6)
-7. [Suunnittelumalleja](#7)
+3. [Muuttujan määrittely var vs. let sekä yhdenmukaisuuden vertailusta](#3)
+4. [Funktionaalinen vai Imperatiivinen ohjelmonti](#4)
+5. [Sulkeumat ja sen käyttötavat](#5)
+6. [Oliot ja niiden käyttäytyminen](#6)
+7. [Protoryypit ja periytyminen](#7)
+8. [Suunnittelumalleja](#8)
 
 # 1 
 # Suosituksia hyviksi JavaScript-ohjelmointikäytännöiksi 
@@ -141,6 +142,42 @@ return typeof value==='boolean';} </p>
 ```
 
 # 3
+# Muuttujan määrittely var vs. let sekä yhdenmukaisuuden vertailusta
+
+JavaScriprissä muuttujan määrittelyssä var ja let sanalla sekä yhdenvertaisuuden tutkimisessa on muutamia huomionarvoisia seikkoja.Funktiossa ja kaikissa sen sisältämissä lohkoissa, var-määritellyt muuttujat liittyvät itse funktio-olioon, eli niistä ei tule lohkojen paikallisia muuttujia. Let sana taas toimii lohkoissa paikallisen muuttujan tavoin.
+
+Alla esimerkkissä määritellään sekä var että let -avainsanalla muuttuja ja alilohko, jonne määritellään samanniminen funktio. 
+```
+function laskinVar() {
+var tulos =10;
+{var tulos =1000;
+tulos++;
+console.log(tulos)}
+return tulos;
+}
+
+function laskinLet() {
+let tulos =10;
+{let tulos =1000;
+tulos++;
+console.log(tulos)}
+return tulos;
+}
+
+console.log("TulosVar:" +laskinVar());
+console.log("TulosLet:" +laskinLet());
+
+1001
+TulosVar: 1001
+1001
+TulosLet:10
+```
+
+Let-avainsanan käyttö on siis aidosti paikallinen ja esimerkissä tulos- muuttujan arvo ei muutu funktion sisällä olevassa lohkossa. Var- määrittelyn tapauksessa näkyyysalue on funktiokohtainen, jolloin muuttujan arvo muuttuu myös funktion sisällä olevassa lohkossa ja taas uusi määrittely lohkon sisällä ei vaikuta funktiossa määriteltyyn tulos-muuttujaan ollenkaan.
+
+Jotta säästytään  var -sanan aiheuttamilta yllätyksiltä, olisikin viisasta ja hyvän ohjelmointityylin mukaista määritellä muuttujat aina let-määreellä. Se helppottaa ongelmien löytämistä ja paikallistamista koodissa.
+
+# 4
 # Funktionaalinen vai imperatiivinen ohjelmointi
 
 ## Imperatiivinen ohjelmointi
@@ -173,7 +210,7 @@ return typeof value==='boolean';} </p>
 
 
 
-# 4
+# 5
 # Sulkeumat ja sen käyttötavat
 
 ## Näkyvyysalue 
@@ -225,7 +262,7 @@ return typeof value==='boolean';} </p>
 <p>Normaalisti olemme tottuneet siihen että paikallinen muuttuja ja sen arvo säilyvät vain tämän funktion elinajan. Tästä poiketen ylläoleva funktio palauttaa toisen funktion, joka näkee ulomman funktion muuttujat a ja b ja palautta arvon "sulkeuma", vaikka ulkoisen funktion suoritus onkin jo päättynyt </p>
 
 
-# 5
+# 6
 # Oliot ja niiden käyttäytyminen 
 
 ## Olion luominen
@@ -392,7 +429,7 @@ for(var i in olio) {
 
 <p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
 
-# 6
+# 7
 # Protoryypit ja periytyminen
 
 Javascriptissä on olemassa kolmenlaisia olioita: funktio-olioita, niihin liittyviä prototyyppiolioita ja "tavallisia" olioita. Oliot perivät ominaisuuksia prototyyppiolioltaan. Vain funktiolla Funktion, prototyyppi ja prototyyppiolio-olio ovat sama asia.
@@ -486,7 +523,7 @@ Object.prototype.-proto_ -->null
 JavaScriptin versioon 1.8.5 ja ECMAScriptin 5. editioon on lisätty funktio Object.create, jonka tarkoituksena on kloonata olio suoraan toisesta oliosta. Tämä ei kuitenkaan toimi aina ihan odotetulla tavalla ja saattaa aiheuttaa ongelmia. sen käyttöä emme välttämättä suosittele tai ainakin kannattaa olla sen käytön suhteen varovainen.
 
 
-# 7
+# 8
 # Suunnittelumalleja
 
 JavaScript-ohjelmalle on tyypillistä suoritusaikainen dynaamisuus eli se että läshes kaikkea voi vauhdissa muuttaa. Tämän seurauksena kielelle on mahdollista kehittää ja onkin kehitetty hyvin erilaisia ohjelmointityylejä ja -tapoja. Verkosta löytyykin paljon erilaisia eri "gurujen" kehittelemiä JavaScript-ohjelmoinnin rakennehahmoja eli suunnittelumalleja ("design pattern") esimerkiksi Ben Cherryn [JavaScript Module Pattern: In-Depth](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html) ja Addy Osmanin [Learning JavaScript Design Patterns, Module Pattern.](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript). Alla luennoilla viitattu esimerkki Addy Omanin suunnittelumallista Module pattern.
