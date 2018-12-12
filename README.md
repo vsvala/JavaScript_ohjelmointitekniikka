@@ -180,7 +180,7 @@ Let-avainsanan käyttö on siis aidosti paikallinen ja esimerkissä tulos- muutt
 Jotta säästytään  var -sanan aiheuttamilta yllätyksiltä, olisikin viisasta ja hyvän ohjelmointityylin mukaista määritellä muuttujat aina let-määreellä. Se helppottaa ongelmien löytämistä ja paikallistamista koodissa.
 
 ## yhtäsuuruus
-##ALA PÄTKÄ SUORAAAA LAINAUSTAA MUOKKKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+##///////////////// PÄTKÄ SUORAAAA LAINAUSTAA MUOKKKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ""Yhtäsuuruuden ja erisuuruisuuden tutkimiseen JavaScriptissä on kolme samuuden versiota: abstrakti (== ja !=), tiukka (=== ja !==) ja erityiskäyttöön tarkoitettu Object.is-metodi.
 Abstraktit samuusvertailut == ja != tekevät tarvittaessa tyyppimuunnoksia samuuden tutkimisessa. Esimerkiksi seuraavat lausekkeet ovat arvoltaan true: 
 123=="123", new String("abc")=="abc", false==0, ""==false, ""==0, null==undefined, []==0
@@ -188,7 +188,15 @@ Tiukat samuusvertailut === ja !== eivät tee tyyppimuunnoksia ennen samuuden tut
 123==="123", new String("abc")==="abc", false===0, ""===false, ""===0, null===undefined, []===0
 Samuusvertailu Object.is poikkeaa tiukasta siten, että seuraavat kaksi ovat arvoltaan true päivastoin kuin tiukassa: 
 Object.is(NaN,NaN), !Object.is(+0,-0). Tästä ei sen enempää."""
+////////////////////////
 
+ Java Scritissä Vertailuoperaattorit == ja === toimivat eritavoin
+== tarkastaa, voiko arvot tyyppikonversioiden kautta tulkita samoiksi
+=== tarkastaa aidon yhtäsuuruuden
+
+Tässä kohtaa vois olla esimerkki
+
+Eli jos halutaan tutkia onko jokin aidosti yhtäsuuri kannattaa käyttää vertailuun aina === operaattoria.
 
 # 4
 # Funktionaalinen vai imperatiivinen ohjelmointi
