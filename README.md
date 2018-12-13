@@ -338,7 +338,7 @@ console.log(noora.tuplaaIka()); //70</p>
 <p><b>tai vielä Object.create-funktion avulla:</b></p>
 
 ```
-var Henkilo = {
+let Henkilo = {
   nimi : "",
   ika : "",
   }
