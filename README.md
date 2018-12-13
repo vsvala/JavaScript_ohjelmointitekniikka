@@ -32,8 +32,8 @@ Jos muuttujalle ei anna arvoa heti luontihetkellä, saa se automaattisesti arvok
 Jos on tarpeen selvittää onko muuttujan arvo undefined vai null, voitaisiin se tehdä seuraavalla tavalla:
 
 ```
-var a;
-var b = null;
+let a;
+let b = null;
 typeof a === undefined // true;
 a === undefined // true;
 b === null // true;
@@ -88,7 +88,7 @@ JavaScriptin valmis typeOf funktio toimii tarkastuksissa tiettyyn pisteesee, se 
 Alla määritelty muuttuja a on Number olio ja se käyttäytyy oikein laskutoimituksissa, mutta sen tyyppi ei ole numero. Jotta tämä saadaan määriteltyä oikein täytyy viitata hierarkiassa ylöspäin Object function prototyyppi olion toString:iin. Tällöin niin Number-olio kuin numero yksikin tunnistetaan numeroiksi, kun taas merkkijono ”1” saa tyypikseen String:
 
 ```
-var a = new Number(4)
+let a = new Number(4)
 write(typeof a == 'number')                                           // false
 write(typeof 2 == 'number')                                           // true
 write(typeof "2" == 'number')                                         // false
@@ -213,12 +213,12 @@ Eli jos halutaan tutkia onko jokin aidosti yhtäsuuri kannattaa käyttää verta
 <p>Seuraavassa esimekki  JavaScriptin yksinkertaisemman korkeamman asteen taulukonkäsittely MAP funktion käytöstä verrattuna saman asian tekevään toistolausekkeella toetutettuun metodiin, joka on huomattavasti pidempi.</p>
 
 ```
-<p>var animals=[{name: ’Fill’, species:’rabbit’}, {name:’Caro’, Species: ‘dog’}, {name:’Val’, Species: ‘dog’}]</p>
+<p>let animals=[{name: ’Fill’, species:’rabbit’}, {name:’Caro’, Species: ‘dog’}, {name:’Val’, Species: ‘dog’}]</p>
 <br>
-<p>var names=animals.map(animal) =>animal.name)</p>
+<p>let names=animals.map(animal) =>animal.name)</p>
 <br>
-<p>var names =[];</p>
-<p>for (var I =0; i &lt; animals.length; i++){ </p>
+<p>let names =[];</p>
+<p>for (let I =0; i &lt; animals.length; i++){ </p>
 <p>names.push(animal[i].name)} </p>
 ```
 
@@ -322,7 +322,7 @@ function Henkilo(nimi, ika) {
   this.ika = ika;
 }
 noora = new Henkilo("Noora", 35);
-var tokahenkilo = new Henkilo("Virva", 15);
+let tokahenkilo = new Henkilo("Virva", 15);
 
 console.log(noora.ika) //35
 console.log(tokahenkilo.nimi) //Virva
@@ -354,7 +354,7 @@ var Henkilo = {
 <p>ECMAScript 6 esitteli class-rakenteen luokkien ja olioiden luomiseen.Pohjimmiltaan sen rakenne on sama kuin kostruktorilla luodulla oliolla. Class luokan olion luokkametodit vastaavat konstruktorilla luodun olion funktio-olion metodeita ja ilmentymämetodit funktio-olion prototyyppiolion metodeja. JavaScriptin luokkametodit eivät kuitenkaan vastaa luokkapohjaisten oliokielten luokkametodia. Luokkiin ei myöskään voida (toistaiseksi?) ohjelmoida tietokenttiä.</p>
 
 ```
-var Henkilo = {
+let Henkilo = {
    class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
  this.nimi=Tytti;
@@ -372,7 +372,7 @@ this.yernow - this.syntymavuosi}
 Javasta poiketen olion kentiksi voi antaa myös metodeja, jotka määritellään vastaavalla tavalla kuin funktio. Metodissa viitataan olion muuttujiin this-osoittimen avulla this.yearnow, this.syntymavuosi. Eli metodin ika-muuttujiin sijoitetaan arvo olion yearnow ja syntymavuosi-muuttujista.Metodiin viitataan/sitä kutsutaan syntaksilla olio.metodi().
 
 ```
-var Henkilo = {
+let Henkilo = {
    class Henkilo{
  constructor(nimi, yearnow, syntymavuosi);{
  this.nimi=Tytti;
@@ -395,7 +395,7 @@ pitkin kysymään "ylemmältä" oliolta löytyykö kenttä sieltä. Jos ei löyd
 Olion kenttänimenä voi käyttää melkein mitä tahansa: tunnus, merkkijono (jopa tyhjä), luku eli  kaikki sellaiset kielen arvot" jotka voi muuttaa merkkijonoksi. Olion kentän tietoihin tietoihin pääsee käsiksi syntaksilla olio.ominaisuus tai vaihtoehtoisesti tietoihin voidaan osoittaa indeksin avulla hakasulkunotaatiolla, jolloin ominaisuuksien arvoja voidaan asettaa dynaamisesti.
 
 ```	
- var elain = {nimi: 'Miuku'}
+ let elain = {nimi: 'Miuku'}
 	elain.nimi ; //Miuku
 	elain[‘nimi’]:  //Miuku
 
@@ -405,8 +405,8 @@ Koska olioden kentät on assosiaatiotaulukoita, olioiden numeroituvia kenttiä v
 
 ```
 Object.prototype.lintu = "Peippo";
-var elain = {kissa: "Miuku"};
-for(var i in elain) {
+let elain = {kissa: "Miuku"};
+for(let i in elain) {
 console.log(i); // tulostaa sekä lintu että kissa }
 
 ```
@@ -414,15 +414,15 @@ Jos halutaan selvittää pelkästään olion omat kentät yksi tapa on käyttä�
 	
 ```
 Object.prototype.lintu = "Peippo";
-var elain = {kissa: "Miuku"};
-for(var i in elain) {
+let elain = {kissa: "Miuku"};
+for(let i in elain) {
 if (elain.hasOwnProperty(i)) {
 console.log(i); // tulostaa vain kissa }
 ```
 Samaan tyyliin saataisiin seuraavilla selville olion numeroimattomien kenttien kentttämimet käyttämällä funktiota: Object.getOwnPropertyNames(o) 
 
 ```
-var sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};
+let sekaolio = {eka:1, toka:2, kolmas:3, nelkkku: function(x) {this.toka+=x}};
 write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
 
 ```
@@ -431,7 +431,7 @@ write(Object.getOwnPropertyNames(sekaolio)); // eka,toka,kolmas,nelkku
 
 
 ```
-var olio={
+let olio={
 eka:1,
 toka:2,
 kolmas:3
@@ -440,7 +440,7 @@ olio.eka=undefined;
 olio.toka=null;
 delete olio.kolmas;
 
-for(var i in olio) {
+for(let i in olio) {
     if (olio.hasOwnProperty(i)) {
         console.log(i, '' + olio[i]);
     }
