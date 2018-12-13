@@ -142,7 +142,7 @@ return typeof value==='boolean';} </p>
 ```
 
 # 3
-# Muuttujan määrittely var vs. let sekä yhäsuuruus vertailusta
+# Muuttujan määrittely var vs. let sekä yhtäsuuruus vertailusta
 
 ## var vs. let
 
@@ -179,16 +179,7 @@ Let-avainsanan käyttö on siis aidosti paikallinen ja esimerkissä tulos- muutt
 
 Jotta säästytään  var -sanan aiheuttamilta yllätyksiltä, olisikin viisasta ja hyvän ohjelmointityylin mukaista määritellä muuttujat aina let-määreellä. Se helppottaa ongelmien löytämistä ja paikallistamista koodissa.
 
-## yhtäsuuruus
-##///////////////// PÄTKÄ SUORAAAA LAINAUSTAA MUOKKKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-""Yhtäsuuruuden ja erisuuruisuuden tutkimiseen JavaScriptissä on kolme samuuden versiota: abstrakti (== ja !=), tiukka (=== ja !==) ja erityiskäyttöön tarkoitettu Object.is-metodi.
-Abstraktit samuusvertailut == ja != tekevät tarvittaessa tyyppimuunnoksia samuuden tutkimisessa. Esimerkiksi seuraavat lausekkeet ovat arvoltaan true: 
-123=="123", new String("abc")=="abc", false==0, ""==false, ""==0, null==undefined, []==0
-Tiukat samuusvertailut === ja !== eivät tee tyyppimuunnoksia ennen samuuden tutkimista. Edellisen luettelon abstraktista vertailusta poiketen lausekkeet ovat arvoltaan false: 
-123==="123", new String("abc")==="abc", false===0, ""===false, ""===0, null===undefined, []===0
-Samuusvertailu Object.is poikkeaa tiukasta siten, että seuraavat kaksi ovat arvoltaan true päivastoin kuin tiukassa: 
-Object.is(NaN,NaN), !Object.is(+0,-0). Tästä ei sen enempää."""
-////////////////////////
+## Yhtäsuuruus
 
  Java Scritissä Vertailuoperaattorit == ja === toimivat eritavoin
  
@@ -198,13 +189,13 @@ Object.is(NaN,NaN), !Object.is(+0,-0). Tästä ei sen enempää."""
 
 Esimerkiksi: 
 ```
-345 == "345#   // true
+345 == "345"   // true
 345 === "345"  // false
 
 tai
 
-new String ("jahuu") == "jahuu"     //true
-new String ("jahuu") === ""jahuu"  //false
+new String ("jahuu") == "jahuu"    //true
+new String ("jahuu") === "jahuu"  //false
 ```
 
 
