@@ -196,7 +196,17 @@ Object.is(NaN,NaN), !Object.is(+0,-0). Tästä ei sen enempää."""
 
 === tarkastaa aidon yhtäsuuruuden
 
-Tässä kohtaa vois olla esimerkki
+Esimerkiksi: 
+```
+345 == "345#   // true
+345 === "345"  // false
+
+tai
+
+new String ("jahuu") == "jahuu"     //true
+new String ("jahuu") === ""jahuu"  //false
+```
+
 
 Eli jos halutaan tutkia onko jokin aidosti yhtäsuuri kannattaa käyttää vertailuun aina === operaattoria.
 
