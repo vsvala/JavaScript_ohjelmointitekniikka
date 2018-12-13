@@ -84,7 +84,7 @@ Kolmanneksi vaihtoehdoksi numeeristen tyyppien tarkastamiseen löysimme Javascri
 
 ```
 
-JavaScriptin valmis typeOf funktio toimii tarkastuksissa tiettyyn pisteesee, se ei ole kaikissa tapauksissa riittävä.
+JavaScriptin valmis typeOf funktio toimii tarkastuksissa tiettyyn pisteeseen, se ei ole kaikissa tapauksissa riittävä.
 Alla määritelty muuttuja a on Number olio ja se käyttäytyy oikein laskutoimituksissa, mutta sen tyyppi ei ole numero. Jotta tämä saadaan määriteltyä oikein täytyy viitata hierarkiassa ylöspäin Object function prototyyppi olion toString:iin. Tällöin niin Number-olio kuin numero yksikin tunnistetaan numeroiksi, kun taas merkkijono ”1” saa tyypikseen String:
 
 ```
