@@ -451,7 +451,7 @@ for(let i in olio) {
 
 <p><b>olion getterit ja setterit</p></b>
 
-<p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin"  </p>
+<p>JavaScriptistä löytyy valmis kirjastofunktio  Object.defineProperties gettereiden ja settereiden luontiin, mutta niitä voi myös ohjelmoida "käsin". Suosittelemme luomaan itse, niin ei aiheudu yllätyksiä  </p>
 
 # 7
 # Protoryypit ja periytyminen
